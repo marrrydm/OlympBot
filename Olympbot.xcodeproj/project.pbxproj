@@ -1,0 +1,856 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0DD93A18C98AE11E03D92956 /* Pods_Olympbot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D115EE9E2EF281429D8778 /* Pods_Olympbot.framework */; };
+		F818220D2A569ED5009C0195 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F818220C2A569ED5009C0195 /* Gradient.swift */; };
+		F82E6E6B2A55703C007A1458 /* RobotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E6E6A2A55703C007A1458 /* RobotController.swift */; };
+		F8A1CA822A581B870074C9BD /* OptimalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1CA812A581B870074C9BD /* OptimalController.swift */; };
+		F8A1CA842A581B940074C9BD /* AggressiveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1CA832A581B940074C9BD /* AggressiveController.swift */; };
+		F8A1CA952A600B780074C9BD /* StrategyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1CA942A600B780074C9BD /* StrategyController.swift */; };
+		F8A1CA972A600E650074C9BD /* StrategyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1CA962A600E650074C9BD /* StrategyCell.swift */; };
+		F8A1CA992A600E9E0074C9BD /* StrategyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1CA982A600E9E0074C9BD /* StrategyModel.swift */; };
+		F8A1CA9F2A615A2A0074C9BD /* StrategyOnlyDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1CA9E2A615A2A0074C9BD /* StrategyOnlyDetailsCell.swift */; };
+		F8A1CAA12A61CF8A0074C9BD /* BotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1CAA02A61CF8A0074C9BD /* BotController.swift */; };
+		F8AB85052A692F9200409E2B /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AB85042A692F9200409E2B /* ResultVC.swift */; };
+		F8BE50FE2A54065E0081C948 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE50FD2A54065E0081C948 /* TabBar.swift */; };
+		F8BE51012A54067D0081C948 /* TradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE51002A54067D0081C948 /* TradeViewController.swift */; };
+		F8BE51032A5406AD0081C948 /* TradingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE51022A5406AD0081C948 /* TradingView.swift */; };
+		F8BE51052A5406C80081C948 /* PairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE51042A5406C80081C948 /* PairView.swift */; };
+		F8BE51072A5406D50081C948 /* PairCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE51062A5406D50081C948 /* PairCell.swift */; };
+		F8BE51092A5406EF0081C948 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE51082A5406EF0081C948 /* UserData.swift */; };
+		F8BE510D2A54070F0081C948 /* OlympContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE510C2A54070F0081C948 /* OlympContent.swift */; };
+		F8BE51182A543C490081C948 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE51172A543C490081C948 /* AccountController.swift */; };
+		F8BE511B2A5444AF0081C948 /* SupportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE511A2A5444AF0081C948 /* SupportController.swift */; };
+		F8BE511D2A5444CE0081C948 /* SupportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE511C2A5444CE0081C948 /* SupportModel.swift */; };
+		F8BE511F2A5444D90081C948 /* SupportPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE511E2A5444D90081C948 /* SupportPresenter.swift */; };
+		F8BE51212A5444E50081C948 /* SupportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE51202A5444E50081C948 /* SupportCell.swift */; };
+		F8BE51232A5445280081C948 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE51222A5445280081C948 /* DetailViewController.swift */; };
+		F8C6A16F2A4D693E007AE0CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C6A16E2A4D693E007AE0CC /* AppDelegate.swift */; };
+		F8C6A1712A4D693E007AE0CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C6A1702A4D693E007AE0CC /* SceneDelegate.swift */; };
+		F8C6A1732A4D693E007AE0CC /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C6A1722A4D693E007AE0CC /* OnboardingViewController.swift */; };
+		F8C6A1782A4D693E007AE0CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C6A1772A4D693E007AE0CC /* Assets.xcassets */; };
+		F8C6A17B2A4D693E007AE0CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8C6A1792A4D693E007AE0CC /* LaunchScreen.storyboard */; };
+		F8C6A1842A4D6F48007AE0CC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8C6A1862A4D6F48007AE0CC /* Localizable.strings */; };
+		F8C6A1882A4D6FB0007AE0CC /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C6A1872A4D6FB0007AE0CC /* Localization.swift */; };
+		F8C6A1932A4D7D2D007AE0CC /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C6A1922A4D7D2D007AE0CC /* Extension.swift */; };
+		F8C6A1952A4EBDE3007AE0CC /* experience.json in Resources */ = {isa = PBXBuildFile; fileRef = F8C6A1942A4EBDE3007AE0CC /* experience.json */; };
+		F8C6A19E2A4EBE88007AE0CC /* Timer.json in Resources */ = {isa = PBXBuildFile; fileRef = F8C6A1962A4EBE88007AE0CC /* Timer.json */; };
+		F8C6A19F2A4EBE88007AE0CC /* 5 Free of charge.json in Resources */ = {isa = PBXBuildFile; fileRef = F8C6A1972A4EBE88007AE0CC /* 5 Free of charge.json */; };
+		F8C6A1A02A4EBE88007AE0CC /* 3 auto-trading.json in Resources */ = {isa = PBXBuildFile; fileRef = F8C6A1982A4EBE88007AE0CC /* 3 auto-trading.json */; };
+		F8C6A1A12A4EBE88007AE0CC /* 7 notification.json in Resources */ = {isa = PBXBuildFile; fileRef = F8C6A1992A4EBE88007AE0CC /* 7 notification.json */; };
+		F8C6A1A22A4EBE88007AE0CC /* 4 signal.json in Resources */ = {isa = PBXBuildFile; fileRef = F8C6A19A2A4EBE88007AE0CC /* 4 signal.json */; };
+		F8C6A1A32A4EBE88007AE0CC /* 1 preloader.json in Resources */ = {isa = PBXBuildFile; fileRef = F8C6A19B2A4EBE88007AE0CC /* 1 preloader.json */; };
+		F8C6A1A42A4EBE88007AE0CC /* 6 comments.json in Resources */ = {isa = PBXBuildFile; fileRef = F8C6A19C2A4EBE88007AE0CC /* 6 comments.json */; };
+		F8C6A1A52A4EBE88007AE0CC /* Signal.json in Resources */ = {isa = PBXBuildFile; fileRef = F8C6A19D2A4EBE88007AE0CC /* Signal.json */; };
+		F8C6A1A72A4EC10B007AE0CC /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C6A1A62A4EC10B007AE0CC /* OnboardingModel.swift */; };
+		F8C6A1AB2A4ED8B5007AE0CC /* PreloaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C6A1AA2A4ED8B5007AE0CC /* PreloaderVC.swift */; };
+		F8CE1BCC2A80DFE000A9DC04 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = F8CE1BCB2A80DFE000A9DC04 /* OneSignal */; };
+		F8CE1BCE2A80DFE000A9DC04 /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = F8CE1BCD2A80DFE000A9DC04 /* OneSignalExtension */; };
+		F8CE1BD62A80E01C00A9DC04 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE1BD52A80E01C00A9DC04 /* NotificationService.swift */; };
+		F8CE1BDA2A80E01C00A9DC04 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F8CE1BD32A80E01C00A9DC04 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F8CE1BE02A80E03600A9DC04 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = F8CE1BDF2A80E03600A9DC04 /* OneSignal */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F8CE1BD82A80E01C00A9DC04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8C6A1632A4D693D007AE0CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8CE1BD22A80E01C00A9DC04;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F8CE1BDE2A80E01C00A9DC04 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F8CE1BDA2A80E01C00A9DC04 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2BF226761716F82AFA8F2729 /* Pods-Olympbot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Olympbot.release.xcconfig"; path = "Target Support Files/Pods-Olympbot/Pods-Olympbot.release.xcconfig"; sourceTree = "<group>"; };
+		64D115EE9E2EF281429D8778 /* Pods_Olympbot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Olympbot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEFAA9F3AAA8B8CB8AD5DADF /* Pods-Olympbot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Olympbot.debug.xcconfig"; path = "Target Support Files/Pods-Olympbot/Pods-Olympbot.debug.xcconfig"; sourceTree = "<group>"; };
+		F818220C2A569ED5009C0195 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
+		F82E6E6A2A55703C007A1458 /* RobotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotController.swift; sourceTree = "<group>"; };
+		F8A1CA812A581B870074C9BD /* OptimalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptimalController.swift; sourceTree = "<group>"; };
+		F8A1CA832A581B940074C9BD /* AggressiveController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AggressiveController.swift; sourceTree = "<group>"; };
+		F8A1CA942A600B780074C9BD /* StrategyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyController.swift; sourceTree = "<group>"; };
+		F8A1CA962A600E650074C9BD /* StrategyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyCell.swift; sourceTree = "<group>"; };
+		F8A1CA982A600E9E0074C9BD /* StrategyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyModel.swift; sourceTree = "<group>"; };
+		F8A1CA9E2A615A2A0074C9BD /* StrategyOnlyDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyOnlyDetailsCell.swift; sourceTree = "<group>"; };
+		F8A1CAA02A61CF8A0074C9BD /* BotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotController.swift; sourceTree = "<group>"; };
+		F8AB85042A692F9200409E2B /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
+		F8BE50FD2A54065E0081C948 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		F8BE51002A54067D0081C948 /* TradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewController.swift; sourceTree = "<group>"; };
+		F8BE51022A5406AD0081C948 /* TradingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingView.swift; sourceTree = "<group>"; };
+		F8BE51042A5406C80081C948 /* PairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairView.swift; sourceTree = "<group>"; };
+		F8BE51062A5406D50081C948 /* PairCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairCell.swift; sourceTree = "<group>"; };
+		F8BE51082A5406EF0081C948 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		F8BE510C2A54070F0081C948 /* OlympContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OlympContent.swift; sourceTree = "<group>"; };
+		F8BE51172A543C490081C948 /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
+		F8BE511A2A5444AF0081C948 /* SupportController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportController.swift; sourceTree = "<group>"; };
+		F8BE511C2A5444CE0081C948 /* SupportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportModel.swift; sourceTree = "<group>"; };
+		F8BE511E2A5444D90081C948 /* SupportPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportPresenter.swift; sourceTree = "<group>"; };
+		F8BE51202A5444E50081C948 /* SupportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportCell.swift; sourceTree = "<group>"; };
+		F8BE51222A5445280081C948 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F8C6A16B2A4D693E007AE0CC /* Olympbot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Olympbot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8C6A16E2A4D693E007AE0CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F8C6A1702A4D693E007AE0CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F8C6A1722A4D693E007AE0CC /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		F8C6A1772A4D693E007AE0CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F8C6A17A2A4D693E007AE0CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F8C6A17C2A4D693E007AE0CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8C6A1852A4D6F48007AE0CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F8C6A1872A4D6FB0007AE0CC /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		F8C6A1922A4D7D2D007AE0CC /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		F8C6A1942A4EBDE3007AE0CC /* experience.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = experience.json; sourceTree = "<group>"; };
+		F8C6A1962A4EBE88007AE0CC /* Timer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Timer.json; sourceTree = "<group>"; };
+		F8C6A1972A4EBE88007AE0CC /* 5 Free of charge.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "5 Free of charge.json"; sourceTree = "<group>"; };
+		F8C6A1982A4EBE88007AE0CC /* 3 auto-trading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "3 auto-trading.json"; sourceTree = "<group>"; };
+		F8C6A1992A4EBE88007AE0CC /* 7 notification.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "7 notification.json"; sourceTree = "<group>"; };
+		F8C6A19A2A4EBE88007AE0CC /* 4 signal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "4 signal.json"; sourceTree = "<group>"; };
+		F8C6A19B2A4EBE88007AE0CC /* 1 preloader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "1 preloader.json"; sourceTree = "<group>"; };
+		F8C6A19C2A4EBE88007AE0CC /* 6 comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "6 comments.json"; sourceTree = "<group>"; };
+		F8C6A19D2A4EBE88007AE0CC /* Signal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Signal.json; sourceTree = "<group>"; };
+		F8C6A1A62A4EC10B007AE0CC /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
+		F8C6A1AA2A4ED8B5007AE0CC /* PreloaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloaderVC.swift; sourceTree = "<group>"; };
+		F8CE1BD32A80E01C00A9DC04 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8CE1BD52A80E01C00A9DC04 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		F8CE1BD72A80E01C00A9DC04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F8C6A1682A4D693E007AE0CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8CE1BCE2A80DFE000A9DC04 /* OneSignalExtension in Frameworks */,
+				F8CE1BCC2A80DFE000A9DC04 /* OneSignal in Frameworks */,
+				0DD93A18C98AE11E03D92956 /* Pods_Olympbot.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8CE1BD02A80E01C00A9DC04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8CE1BE02A80E03600A9DC04 /* OneSignal in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		935B6DD591A14E0092992D48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64D115EE9E2EF281429D8778 /* Pods_Olympbot.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC5F7180BBC85747B78AA024 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AEFAA9F3AAA8B8CB8AD5DADF /* Pods-Olympbot.debug.xcconfig */,
+				2BF226761716F82AFA8F2729 /* Pods-Olympbot.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F82E6E692A557034007A1458 /* Robot */ = {
+			isa = PBXGroup;
+			children = (
+				F8A1CA9D2A615A100074C9BD /* Cells */,
+				F8A1CA802A581B700074C9BD /* OptimalAggressive */,
+				F82E6E6A2A55703C007A1458 /* RobotController.swift */,
+				F818220C2A569ED5009C0195 /* Gradient.swift */,
+				F8A1CA942A600B780074C9BD /* StrategyController.swift */,
+				F8A1CA982A600E9E0074C9BD /* StrategyModel.swift */,
+				F8A1CAA02A61CF8A0074C9BD /* BotController.swift */,
+				F8AB85042A692F9200409E2B /* ResultVC.swift */,
+			);
+			path = Robot;
+			sourceTree = "<group>";
+		};
+		F8A1CA802A581B700074C9BD /* OptimalAggressive */ = {
+			isa = PBXGroup;
+			children = (
+				F8A1CA812A581B870074C9BD /* OptimalController.swift */,
+				F8A1CA832A581B940074C9BD /* AggressiveController.swift */,
+			);
+			path = OptimalAggressive;
+			sourceTree = "<group>";
+		};
+		F8A1CA9D2A615A100074C9BD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F8A1CA962A600E650074C9BD /* StrategyCell.swift */,
+				F8A1CA9E2A615A2A0074C9BD /* StrategyOnlyDetailsCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F8BE50FC2A5405020081C948 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F82E6E692A557034007A1458 /* Robot */,
+				F8BE51192A5440370081C948 /* Support */,
+				F8BE51162A543BD30081C948 /* Account */,
+				F8BE50FF2A5406770081C948 /* Trade */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		F8BE50FF2A5406770081C948 /* Trade */ = {
+			isa = PBXGroup;
+			children = (
+				F8BE51002A54067D0081C948 /* TradeViewController.swift */,
+				F8BE51022A5406AD0081C948 /* TradingView.swift */,
+				F8BE51042A5406C80081C948 /* PairView.swift */,
+				F8BE51062A5406D50081C948 /* PairCell.swift */,
+				F8BE51082A5406EF0081C948 /* UserData.swift */,
+				F8BE510C2A54070F0081C948 /* OlympContent.swift */,
+			);
+			path = Trade;
+			sourceTree = "<group>";
+		};
+		F8BE51162A543BD30081C948 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				F8BE51172A543C490081C948 /* AccountController.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		F8BE51192A5440370081C948 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				F8BE511A2A5444AF0081C948 /* SupportController.swift */,
+				F8BE511C2A5444CE0081C948 /* SupportModel.swift */,
+				F8BE511E2A5444D90081C948 /* SupportPresenter.swift */,
+				F8BE51202A5444E50081C948 /* SupportCell.swift */,
+				F8BE51222A5445280081C948 /* DetailViewController.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		F8C6A1622A4D693D007AE0CC = {
+			isa = PBXGroup;
+			children = (
+				F8C6A16D2A4D693E007AE0CC /* Olympbot */,
+				F8CE1BD42A80E01C00A9DC04 /* OneSignalNotificationServiceExtension */,
+				F8C6A16C2A4D693E007AE0CC /* Products */,
+				BC5F7180BBC85747B78AA024 /* Pods */,
+				935B6DD591A14E0092992D48 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F8C6A16C2A4D693E007AE0CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8C6A16B2A4D693E007AE0CC /* Olympbot.app */,
+				F8CE1BD32A80E01C00A9DC04 /* OneSignalNotificationServiceExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8C6A16D2A4D693E007AE0CC /* Olympbot */ = {
+			isa = PBXGroup;
+			children = (
+				F8BE50FC2A5405020081C948 /* TabBar */,
+				F8C6A1A92A4ED8A9007AE0CC /* Onboarding */,
+				F8C6A1A82A4ED898007AE0CC /* Animation */,
+				F8C6A16E2A4D693E007AE0CC /* AppDelegate.swift */,
+				F8C6A1702A4D693E007AE0CC /* SceneDelegate.swift */,
+				F8C6A1772A4D693E007AE0CC /* Assets.xcassets */,
+				F8C6A1792A4D693E007AE0CC /* LaunchScreen.storyboard */,
+				F8C6A17C2A4D693E007AE0CC /* Info.plist */,
+				F8C6A1862A4D6F48007AE0CC /* Localizable.strings */,
+				F8C6A1872A4D6FB0007AE0CC /* Localization.swift */,
+			);
+			path = Olympbot;
+			sourceTree = "<group>";
+		};
+		F8C6A1A82A4ED898007AE0CC /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				F8C6A1922A4D7D2D007AE0CC /* Extension.swift */,
+				F8C6A1942A4EBDE3007AE0CC /* experience.json */,
+				F8C6A19B2A4EBE88007AE0CC /* 1 preloader.json */,
+				F8C6A1982A4EBE88007AE0CC /* 3 auto-trading.json */,
+				F8C6A19A2A4EBE88007AE0CC /* 4 signal.json */,
+				F8C6A1972A4EBE88007AE0CC /* 5 Free of charge.json */,
+				F8C6A19C2A4EBE88007AE0CC /* 6 comments.json */,
+				F8C6A1992A4EBE88007AE0CC /* 7 notification.json */,
+				F8C6A19D2A4EBE88007AE0CC /* Signal.json */,
+				F8C6A1962A4EBE88007AE0CC /* Timer.json */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		F8C6A1A92A4ED8A9007AE0CC /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				F8BE50FD2A54065E0081C948 /* TabBar.swift */,
+				F8C6A1A62A4EC10B007AE0CC /* OnboardingModel.swift */,
+				F8C6A1722A4D693E007AE0CC /* OnboardingViewController.swift */,
+				F8C6A1AA2A4ED8B5007AE0CC /* PreloaderVC.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		F8CE1BD42A80E01C00A9DC04 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				F8CE1BD52A80E01C00A9DC04 /* NotificationService.swift */,
+				F8CE1BD72A80E01C00A9DC04 /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F8C6A16A2A4D693E007AE0CC /* Olympbot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8C6A17F2A4D693E007AE0CC /* Build configuration list for PBXNativeTarget "Olympbot" */;
+			buildPhases = (
+				06306C20B302C49DAC91B785 /* [CP] Check Pods Manifest.lock */,
+				F8C6A1672A4D693E007AE0CC /* Sources */,
+				F8C6A1682A4D693E007AE0CC /* Frameworks */,
+				F8C6A1692A4D693E007AE0CC /* Resources */,
+				F8CE1BDE2A80E01C00A9DC04 /* Embed Foundation Extensions */,
+				003F87200EA9A29614739B02 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8CE1BD92A80E01C00A9DC04 /* PBXTargetDependency */,
+			);
+			name = Olympbot;
+			packageProductDependencies = (
+				F8CE1BCB2A80DFE000A9DC04 /* OneSignal */,
+				F8CE1BCD2A80DFE000A9DC04 /* OneSignalExtension */,
+			);
+			productName = Olympbot;
+			productReference = F8C6A16B2A4D693E007AE0CC /* Olympbot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F8CE1BD22A80E01C00A9DC04 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8CE1BDB2A80E01C00A9DC04 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				F8CE1BCF2A80E01C00A9DC04 /* Sources */,
+				F8CE1BD02A80E01C00A9DC04 /* Frameworks */,
+				F8CE1BD12A80E01C00A9DC04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			packageProductDependencies = (
+				F8CE1BDF2A80E03600A9DC04 /* OneSignal */,
+			);
+			productName = OneSignalNotificationServiceExtension;
+			productReference = F8CE1BD32A80E01C00A9DC04 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F8C6A1632A4D693D007AE0CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					F8C6A16A2A4D693E007AE0CC = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					F8CE1BD22A80E01C00A9DC04 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+				};
+			};
+			buildConfigurationList = F8C6A1662A4D693D007AE0CC /* Build configuration list for PBXProject "Olympbot" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F8C6A1622A4D693D007AE0CC;
+			packageReferences = (
+				F8CE1BCA2A80DFE000A9DC04 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
+			);
+			productRefGroup = F8C6A16C2A4D693E007AE0CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8C6A16A2A4D693E007AE0CC /* Olympbot */,
+				F8CE1BD22A80E01C00A9DC04 /* OneSignalNotificationServiceExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F8C6A1692A4D693E007AE0CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8C6A1A42A4EBE88007AE0CC /* 6 comments.json in Resources */,
+				F8C6A17B2A4D693E007AE0CC /* LaunchScreen.storyboard in Resources */,
+				F8C6A1A32A4EBE88007AE0CC /* 1 preloader.json in Resources */,
+				F8C6A1A12A4EBE88007AE0CC /* 7 notification.json in Resources */,
+				F8C6A1A02A4EBE88007AE0CC /* 3 auto-trading.json in Resources */,
+				F8C6A19F2A4EBE88007AE0CC /* 5 Free of charge.json in Resources */,
+				F8C6A1842A4D6F48007AE0CC /* Localizable.strings in Resources */,
+				F8C6A19E2A4EBE88007AE0CC /* Timer.json in Resources */,
+				F8C6A1A22A4EBE88007AE0CC /* 4 signal.json in Resources */,
+				F8C6A1A52A4EBE88007AE0CC /* Signal.json in Resources */,
+				F8C6A1782A4D693E007AE0CC /* Assets.xcassets in Resources */,
+				F8C6A1952A4EBDE3007AE0CC /* experience.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8CE1BD12A80E01C00A9DC04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		003F87200EA9A29614739B02 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Olympbot/Pods-Olympbot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Olympbot/Pods-Olympbot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Olympbot/Pods-Olympbot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		06306C20B302C49DAC91B785 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Olympbot-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F8C6A1672A4D693E007AE0CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8A1CA992A600E9E0074C9BD /* StrategyModel.swift in Sources */,
+				F8BE51052A5406C80081C948 /* PairView.swift in Sources */,
+				F8A1CA9F2A615A2A0074C9BD /* StrategyOnlyDetailsCell.swift in Sources */,
+				F8BE51092A5406EF0081C948 /* UserData.swift in Sources */,
+				F8A1CA842A581B940074C9BD /* AggressiveController.swift in Sources */,
+				F8BE511F2A5444D90081C948 /* SupportPresenter.swift in Sources */,
+				F8C6A1732A4D693E007AE0CC /* OnboardingViewController.swift in Sources */,
+				F8C6A1932A4D7D2D007AE0CC /* Extension.swift in Sources */,
+				F8BE51072A5406D50081C948 /* PairCell.swift in Sources */,
+				F8BE51232A5445280081C948 /* DetailViewController.swift in Sources */,
+				F8BE51032A5406AD0081C948 /* TradingView.swift in Sources */,
+				F8BE51182A543C490081C948 /* AccountController.swift in Sources */,
+				F8BE51012A54067D0081C948 /* TradeViewController.swift in Sources */,
+				F8BE511D2A5444CE0081C948 /* SupportModel.swift in Sources */,
+				F8C6A1A72A4EC10B007AE0CC /* OnboardingModel.swift in Sources */,
+				F8A1CA972A600E650074C9BD /* StrategyCell.swift in Sources */,
+				F8AB85052A692F9200409E2B /* ResultVC.swift in Sources */,
+				F8A1CA952A600B780074C9BD /* StrategyController.swift in Sources */,
+				F818220D2A569ED5009C0195 /* Gradient.swift in Sources */,
+				F8C6A1AB2A4ED8B5007AE0CC /* PreloaderVC.swift in Sources */,
+				F8C6A16F2A4D693E007AE0CC /* AppDelegate.swift in Sources */,
+				F8A1CAA12A61CF8A0074C9BD /* BotController.swift in Sources */,
+				F8A1CA822A581B870074C9BD /* OptimalController.swift in Sources */,
+				F8C6A1882A4D6FB0007AE0CC /* Localization.swift in Sources */,
+				F8C6A1712A4D693E007AE0CC /* SceneDelegate.swift in Sources */,
+				F8BE51212A5444E50081C948 /* SupportCell.swift in Sources */,
+				F8BE510D2A54070F0081C948 /* OlympContent.swift in Sources */,
+				F8BE511B2A5444AF0081C948 /* SupportController.swift in Sources */,
+				F82E6E6B2A55703C007A1458 /* RobotController.swift in Sources */,
+				F8BE50FE2A54065E0081C948 /* TabBar.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8CE1BCF2A80E01C00A9DC04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8CE1BD62A80E01C00A9DC04 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F8CE1BD92A80E01C00A9DC04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8CE1BD22A80E01C00A9DC04 /* OneSignalNotificationServiceExtension */;
+			targetProxy = F8CE1BD82A80E01C00A9DC04 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F8C6A1792A4D693E007AE0CC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8C6A17A2A4D693E007AE0CC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F8C6A1862A4D6F48007AE0CC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8C6A1852A4D6F48007AE0CC /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F8C6A17D2A4D693E007AE0CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F8C6A17E2A4D693E007AE0CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F8C6A1802A4D693E007AE0CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEFAA9F3AAA8B8CB8AD5DADF /* Pods-Olympbot.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T43M2RW9QP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Olympbot/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mganeeva.Olympbot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F8C6A1812A4D693E007AE0CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BF226761716F82AFA8F2729 /* Pods-Olympbot.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T43M2RW9QP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Olympbot/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mganeeva.Olympbot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F8CE1BDC2A80E01C00A9DC04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T43M2RW9QP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mganeeva.Olympbot.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F8CE1BDD2A80E01C00A9DC04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T43M2RW9QP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mganeeva.Olympbot.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F8C6A1662A4D693D007AE0CC /* Build configuration list for PBXProject "Olympbot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8C6A17D2A4D693E007AE0CC /* Debug */,
+				F8C6A17E2A4D693E007AE0CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8C6A17F2A4D693E007AE0CC /* Build configuration list for PBXNativeTarget "Olympbot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8C6A1802A4D693E007AE0CC /* Debug */,
+				F8C6A1812A4D693E007AE0CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8CE1BDB2A80E01C00A9DC04 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8CE1BDC2A80E01C00A9DC04 /* Debug */,
+				F8CE1BDD2A80E01C00A9DC04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F8CE1BCA2A80DFE000A9DC04 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F8CE1BCB2A80DFE000A9DC04 /* OneSignal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8CE1BCA2A80DFE000A9DC04 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignal;
+		};
+		F8CE1BCD2A80DFE000A9DC04 /* OneSignalExtension */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8CE1BCA2A80DFE000A9DC04 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalExtension;
+		};
+		F8CE1BDF2A80E03600A9DC04 /* OneSignal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8CE1BCA2A80DFE000A9DC04 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignal;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = F8C6A1632A4D693D007AE0CC /* Project object */;
+}

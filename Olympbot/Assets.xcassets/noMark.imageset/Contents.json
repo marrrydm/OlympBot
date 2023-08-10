@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "noMark.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

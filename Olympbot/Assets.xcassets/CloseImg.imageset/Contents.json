@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "CloseImg.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

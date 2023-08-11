@@ -415,6 +415,7 @@ class BotController: UIViewController, UIScrollViewDelegate {
                         if profitIsNil {
                             goResult()
                             timerCount = 70
+                            UserDefaults.standard.set(false, forKey: UserData.SettingsKeys.isWork.rawValue)
                         } else {
                             balance += Int(UserData.profit)!
                         }
@@ -776,6 +777,7 @@ extension BotController {
         let vc = ResultVC()
         timerCount = 70
         checkTimer = false
+        UserDefaults.standard.set(false, forKey: UserData.SettingsKeys.isWork.rawValue)
         self.delegate = vc
         if profitLabelsVal.text == "-" {
             resultNum = UserData.sumProfitAfterActive

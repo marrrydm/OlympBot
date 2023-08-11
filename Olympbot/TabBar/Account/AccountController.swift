@@ -1,6 +1,4 @@
 import UIKit
-import AppsFlyerLib
-import FirebaseAnalytics
 
 class AccountViewController: UIViewController {
     private let titleLabel: UILabel = {
@@ -87,12 +85,6 @@ class AccountViewController: UIViewController {
 
     private let personImg = UIImageView(image: UIImage(named: "person"))
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        AppsFlyerLib.shared().logEvent("tab_account", withValues: nil)
-        Analytics.logEvent("tab_account", parameters: nil)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
@@ -171,13 +163,13 @@ class AccountViewController: UIViewController {
 
 extension AccountViewController {
     @objc private func policyAction() {
-        if let url = URL(string: "https://www.freeprivacypolicy.com/live/3bc53007-2582-467d-a420-860339791bb1"), UIApplication.shared.canOpenURL(url) {
+        if let url = URL(string: "https://www.freeprivacypolicy.com/live/f043dd2d-3b13-4a96-b1d9-5c0adbdbc0b8"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
 
     @objc private func termsAction() {
-        if let url = URL(string: "https://www.freeprivacypolicy.com/live/dfce9399-8ecc-4aee-a65f-6f5dde38b810"), UIApplication.shared.canOpenURL(url) {
+        if let url = URL(string: "https://www.freeprivacypolicy.com/live/12043b8e-f70e-4ef8-86cc-e12492390923"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }

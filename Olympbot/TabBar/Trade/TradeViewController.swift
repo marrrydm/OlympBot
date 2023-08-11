@@ -1,5 +1,3 @@
-import AppsFlyerLib
-import FirebaseAnalytics
 import UIKit
 import WebKit
 
@@ -12,7 +10,6 @@ class TradeViewController: UIViewController, UITextFieldDelegate {
         labelBalance.textAlignment = .left
         labelBalance.keyboardType = .decimalPad
         labelBalance.textColor = .white
-        labelBalance.addDoneButtonOnKeyboard()
         labelBalance.font = .systemFont(ofSize: 18, weight: .bold)
 
         return labelBalance
@@ -207,7 +204,7 @@ class TradeViewController: UIViewController, UITextFieldDelegate {
     private var price = 0.0
 
     private var timerValue = 1
-    private var invValue = 1000.0
+    private var invValue = 100.0
     private var timeArr = [1, 3, 5]
     private var index = 0
 
@@ -218,6 +215,8 @@ class TradeViewController: UIViewController, UITextFieldDelegate {
         setupViews()
         makeConstraints()
 
+        addDoneButtonOnKeyboard()
+
         labelBalance.text = "\(UserData.balance)"
         guard let pair = pair else { return }
         pairLabel.text = pair.key.prefix(3) + "/" + pair.key.suffix(3)
@@ -225,8 +224,6 @@ class TradeViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        AppsFlyerLib.shared().logEvent("tab_trade", withValues: nil)
-        Analytics.logEvent("tab_trade", parameters: nil)
 
         if initialState, let pair = pair {
             let content = TradingView(width: chart.frame.width - 20.0, height: view.safeAreaLayoutGuide.layoutFrame.height - 290.0, symbol: pair.0).getHTMLContent()
@@ -385,6 +382,27 @@ extension TradeViewController: PairDelegate {
 }
 
 extension TradeViewController {
+    func addDoneButtonOnKeyboard() {
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        doneToolbar.barStyle = .default
+
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done".localize(), style: .done, target: self, action: #selector(self.doneButtonAction))
+
+        let items = [flexSpace, done]
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+
+        labelBalance.inputAccessoryView = doneToolbar
+    }
+
+    @objc func doneButtonAction() {
+        let balance = Int(labelBalance.text!)
+        UserDefaults.standard.set(balance, forKey: UserData.SettingsKeys.balance.rawValue)
+        self.labelBalance.text = "\(UserData.balance)"
+        labelBalance.resignFirstResponder()
+    }
+
     private func taskForPair(amount: Double) {
         let time = timerValue * 60
         DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.seconds(time)) { [self] in

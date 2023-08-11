@@ -107,10 +107,6 @@ class ResultVC: UIViewController {
         close.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapButtonNext)))
         close.isUserInteractionEnabled = COREVIDEO_TRUE
 
-        UserDefaults.standard.set(nil, forKey: UserData.SettingsKeys.dateAlgorithmStart.rawValue)
-        UserDefaults.standard.set(0, forKey: UserData.SettingsKeys.profitAfterActive.rawValue)
-        UserDefaults.standard.set(0, forKey: UserData.SettingsKeys.sumProfitAfterActive.rawValue)
-
         view.addSubviews(close, viewResult, resImg, nextBtn)
         viewResult.addSubviews(lblNum, lblNumVal, lblPercentage, lblPercentageVal, lblTotalProfit, lblTotalProfitVal)
 
@@ -169,11 +165,6 @@ class ResultVC: UIViewController {
             make.bottom.equalTo(lblPercentageVal.snp.top).offset(-14)
             make.trailing.equalToSuperview().inset(16)
         }
-
-        UserDefaults.standard.set(nil, forKey: UserData.SettingsKeys.dateAlgorithmStart.rawValue)
-        UserDefaults.standard.set(0, forKey: UserData.SettingsKeys.profitAfterActive.rawValue)
-        UserDefaults.standard.set(0, forKey: UserData.SettingsKeys.sumProfitAfterActive.rawValue)
-        UserDefaults.standard.set(false, forKey: UserData.SettingsKeys.isWork.rawValue)
     }
 }
 
@@ -182,14 +173,16 @@ extension ResultVC {
         UserDefaults.standard.set(nil, forKey: UserData.SettingsKeys.dateAlgorithmStart.rawValue)
         UserDefaults.standard.set(0, forKey: UserData.SettingsKeys.profitAfterActive.rawValue)
         UserDefaults.standard.set(0, forKey: UserData.SettingsKeys.sumProfitAfterActive.rawValue)
+
         self.navigationController?.popToRootViewController(animated: true)
     }
 
     @objc private func closePage() {
-        self.navigationController?.popToRootViewController(animated: true)
         UserDefaults.standard.set(nil, forKey: UserData.SettingsKeys.dateAlgorithmStart.rawValue)
+        UserDefaults.standard.set(false, forKey: UserData.SettingsKeys.isWork.rawValue)
         UserDefaults.standard.set(0, forKey: UserData.SettingsKeys.profitAfterActive.rawValue)
-        UserDefaults.standard.set(0, forKey: UserData.SettingsKeys.sumProfitAfterActive.rawValue)
+
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }
 
@@ -203,9 +196,5 @@ extension ResultVC: ResultDelegate {
         var balance = UserData.balance
         balance += result
         UserDefaults.standard.set(balance, forKey: UserData.SettingsKeys.balance.rawValue)
-        UserDefaults.standard.set(nil, forKey: UserData.SettingsKeys.dateAlgorithmStart.rawValue)
-        UserDefaults.standard.set(0, forKey: UserData.SettingsKeys.profitAfterActive.rawValue)
-        UserDefaults.standard.set(0, forKey: UserData.SettingsKeys.sumProfitAfterActive.rawValue)
-
     }
 }

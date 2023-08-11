@@ -608,7 +608,6 @@ class RobotController: UIViewController, UIScrollViewDelegate {
     private let viewDark: UIView = {
         let viewDark = UIView()
         viewDark.backgroundColor = .black.withAlphaComponent(0.8)
-        viewDark.isHidden = true
 
         return viewDark
     }()
@@ -644,13 +643,21 @@ class RobotController: UIViewController, UIScrollViewDelegate {
 
     override func loadView() {
         super.loadView()
-        if UserData.isWork || UserData.profitAfterActive != 0 || UserData.sumProfitAfterActive != 0 {
+        print(UserData.isWork)
+        if UserData.isWork {
             let date1 = Date()
             let date2 = UserData.dateAlgorithmStart ?? Date()
             let between = abs(hourBetween(start: date1, end: date2))
-
             if between < 1 {
-                goRobot()
+                DispatchQueue.main.async { [self] in
+                    viewDark.isHidden = false
+                    activityIndicator.startAnimating()
+                }
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
+                    let vc = BotController()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
             } else {
                 var balance = UserData.balance
                 if UserData.profit == "-" {
@@ -660,6 +667,7 @@ class RobotController: UIViewController, UIScrollViewDelegate {
                     balance += Int(UserData.sumProfitAfterActive)
                 }
                 UserDefaults.standard.set(balance, forKey: UserData.SettingsKeys.balance.rawValue)
+                UserDefaults.standard.set(false, forKey: UserData.SettingsKeys.isWork.rawValue)
                 UserDefaults.standard.set(nil, forKey: UserData.SettingsKeys.dateAlgorithmStart.rawValue)
                 UserDefaults.standard.set(0, forKey: UserData.SettingsKeys.profitAfterActive.rawValue)
                 UserDefaults.standard.set(0, forKey: UserData.SettingsKeys.sumProfitAfterActive.rawValue)
@@ -1203,6 +1211,7 @@ extension RobotController {
     @objc private func goRobot() {
         viewDark.isHidden = false
         activityIndicator.startAnimating()
+        UserDefaults.standard.set(true, forKey: UserData.SettingsKeys.isWork.rawValue)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             let vc = BotController()
             self.navigationController?.pushViewController(vc, animated: true)

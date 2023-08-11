@@ -1,11 +1,9 @@
 import AppTrackingTransparency
-import AppsFlyerLib
-import FirebaseAnalytics
 import Lottie
 import OneSignal
 import StoreKit
 import UIKit
- 
+
 class Onboarding1: UIViewController {
     private let labelTitle = UILabel()
     private let contentLabel = UILabel()
@@ -37,12 +35,6 @@ class Onboarding1: UIViewController {
 
         let random = Int.random(in: 100000...999999)
         UserDefaults.standard.set(random, forKey: UserData.SettingsKeys.userId.rawValue)
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        AppsFlyerLib.shared().logEvent("onboarding_start", withValues: nil)
-        Analytics.logEvent("onboarding_start", parameters: nil)
     }
 
     private func viewContent() {
@@ -90,7 +82,7 @@ class Onboarding1: UIViewController {
         nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         nextButton.heightAnchor.constraint(equalToConstant: 48).isActive = true
-        
+
         view.addSubview(imgControl)
         imgControl.translatesAutoresizingMaskIntoConstraints = false
         imgControl.image = arrayData[count].imgProgress
@@ -116,7 +108,7 @@ class Onboarding1: UIViewController {
 
 extension Onboarding1 {
     @objc private func tapButtonNext(sender: UITapGestureRecognizer) {
-        
+
         if count == 0 {
             ATTrackingManager.requestTrackingAuthorization { status in
                 switch status {
@@ -131,19 +123,19 @@ extension Onboarding1 {
                 }
             }
         }
-        
+
         if count == 4 {
             if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
                 SKStoreReviewController.requestReview(in: scene)
             }
         }
-        
+
         if count == 5 {
             OneSignal.promptForPushNotifications(userResponse: { accepted in
-                
+
             })
         }
-        
+
         count += 1
         if count < 6 {
             labelTitle.text = arrayData[count].title
@@ -203,8 +195,6 @@ extension Onboarding1 {
             default: break
             }
         } else {
-            AppsFlyerLib.shared().logEvent("onboarding_finish", withValues: nil)
-            Analytics.logEvent("onboarding_finish", parameters: nil)
             let vc =  TabBarController()
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: false)

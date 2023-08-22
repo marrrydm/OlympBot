@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0DD93A18C98AE11E03D92956 /* Pods_Olympbot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D115EE9E2EF281429D8778 /* Pods_Olympbot.framework */; };
+		F8089AF02A94B43B005F5590 /* Signal.json in Resources */ = {isa = PBXBuildFile; fileRef = F8089AEF2A94B43B005F5590 /* Signal.json */; };
+		F8089AF22A94B489005F5590 /* Timer.json in Resources */ = {isa = PBXBuildFile; fileRef = F8089AF12A94B489005F5590 /* Timer.json */; };
 		F818220D2A569ED5009C0195 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F818220C2A569ED5009C0195 /* Gradient.swift */; };
 		F82E6E6B2A55703C007A1458 /* RobotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82E6E6A2A55703C007A1458 /* RobotController.swift */; };
+		F8442D962A90826400A80BE7 /* StartTradeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8442D952A90826400A80BE7 /* StartTradeVC.swift */; };
 		F8A1CA822A581B870074C9BD /* OptimalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1CA812A581B870074C9BD /* OptimalController.swift */; };
 		F8A1CA842A581B940074C9BD /* AggressiveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1CA832A581B940074C9BD /* AggressiveController.swift */; };
 		F8A1CA952A600B780074C9BD /* StrategyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A1CA942A600B780074C9BD /* StrategyController.swift */; };
@@ -40,14 +43,12 @@
 		F8C6A1882A4D6FB0007AE0CC /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C6A1872A4D6FB0007AE0CC /* Localization.swift */; };
 		F8C6A1932A4D7D2D007AE0CC /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C6A1922A4D7D2D007AE0CC /* Extension.swift */; };
 		F8C6A1952A4EBDE3007AE0CC /* experience.json in Resources */ = {isa = PBXBuildFile; fileRef = F8C6A1942A4EBDE3007AE0CC /* experience.json */; };
-		F8C6A19E2A4EBE88007AE0CC /* Timer.json in Resources */ = {isa = PBXBuildFile; fileRef = F8C6A1962A4EBE88007AE0CC /* Timer.json */; };
 		F8C6A19F2A4EBE88007AE0CC /* 5 Free of charge.json in Resources */ = {isa = PBXBuildFile; fileRef = F8C6A1972A4EBE88007AE0CC /* 5 Free of charge.json */; };
 		F8C6A1A02A4EBE88007AE0CC /* 3 auto-trading.json in Resources */ = {isa = PBXBuildFile; fileRef = F8C6A1982A4EBE88007AE0CC /* 3 auto-trading.json */; };
 		F8C6A1A12A4EBE88007AE0CC /* 7 notification.json in Resources */ = {isa = PBXBuildFile; fileRef = F8C6A1992A4EBE88007AE0CC /* 7 notification.json */; };
 		F8C6A1A22A4EBE88007AE0CC /* 4 signal.json in Resources */ = {isa = PBXBuildFile; fileRef = F8C6A19A2A4EBE88007AE0CC /* 4 signal.json */; };
 		F8C6A1A32A4EBE88007AE0CC /* 1 preloader.json in Resources */ = {isa = PBXBuildFile; fileRef = F8C6A19B2A4EBE88007AE0CC /* 1 preloader.json */; };
 		F8C6A1A42A4EBE88007AE0CC /* 6 comments.json in Resources */ = {isa = PBXBuildFile; fileRef = F8C6A19C2A4EBE88007AE0CC /* 6 comments.json */; };
-		F8C6A1A52A4EBE88007AE0CC /* Signal.json in Resources */ = {isa = PBXBuildFile; fileRef = F8C6A19D2A4EBE88007AE0CC /* Signal.json */; };
 		F8C6A1A72A4EC10B007AE0CC /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C6A1A62A4EC10B007AE0CC /* OnboardingModel.swift */; };
 		F8C6A1AB2A4ED8B5007AE0CC /* PreloaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C6A1AA2A4ED8B5007AE0CC /* PreloaderVC.swift */; };
 		F8CE1BCC2A80DFE000A9DC04 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = F8CE1BCB2A80DFE000A9DC04 /* OneSignal */; };
@@ -85,8 +86,11 @@
 		2BF226761716F82AFA8F2729 /* Pods-Olympbot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Olympbot.release.xcconfig"; path = "Target Support Files/Pods-Olympbot/Pods-Olympbot.release.xcconfig"; sourceTree = "<group>"; };
 		64D115EE9E2EF281429D8778 /* Pods_Olympbot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Olympbot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEFAA9F3AAA8B8CB8AD5DADF /* Pods-Olympbot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Olympbot.debug.xcconfig"; path = "Target Support Files/Pods-Olympbot/Pods-Olympbot.debug.xcconfig"; sourceTree = "<group>"; };
+		F8089AEF2A94B43B005F5590 /* Signal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Signal.json; sourceTree = "<group>"; };
+		F8089AF12A94B489005F5590 /* Timer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Timer.json; sourceTree = "<group>"; };
 		F818220C2A569ED5009C0195 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		F82E6E6A2A55703C007A1458 /* RobotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotController.swift; sourceTree = "<group>"; };
+		F8442D952A90826400A80BE7 /* StartTradeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTradeVC.swift; sourceTree = "<group>"; };
 		F8A1CA812A581B870074C9BD /* OptimalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptimalController.swift; sourceTree = "<group>"; };
 		F8A1CA832A581B940074C9BD /* AggressiveController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AggressiveController.swift; sourceTree = "<group>"; };
 		F8A1CA942A600B780074C9BD /* StrategyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyController.swift; sourceTree = "<group>"; };
@@ -119,14 +123,12 @@
 		F8C6A1872A4D6FB0007AE0CC /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		F8C6A1922A4D7D2D007AE0CC /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F8C6A1942A4EBDE3007AE0CC /* experience.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = experience.json; sourceTree = "<group>"; };
-		F8C6A1962A4EBE88007AE0CC /* Timer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Timer.json; sourceTree = "<group>"; };
 		F8C6A1972A4EBE88007AE0CC /* 5 Free of charge.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "5 Free of charge.json"; sourceTree = "<group>"; };
 		F8C6A1982A4EBE88007AE0CC /* 3 auto-trading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "3 auto-trading.json"; sourceTree = "<group>"; };
 		F8C6A1992A4EBE88007AE0CC /* 7 notification.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "7 notification.json"; sourceTree = "<group>"; };
 		F8C6A19A2A4EBE88007AE0CC /* 4 signal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "4 signal.json"; sourceTree = "<group>"; };
 		F8C6A19B2A4EBE88007AE0CC /* 1 preloader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "1 preloader.json"; sourceTree = "<group>"; };
 		F8C6A19C2A4EBE88007AE0CC /* 6 comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "6 comments.json"; sourceTree = "<group>"; };
-		F8C6A19D2A4EBE88007AE0CC /* Signal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Signal.json; sourceTree = "<group>"; };
 		F8C6A1A62A4EC10B007AE0CC /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 		F8C6A1AA2A4ED8B5007AE0CC /* PreloaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloaderVC.swift; sourceTree = "<group>"; };
 		F8CE1BD32A80E01C00A9DC04 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,6 +228,7 @@
 				F8BE51062A5406D50081C948 /* PairCell.swift */,
 				F8BE51082A5406EF0081C948 /* UserData.swift */,
 				F8BE510C2A54070F0081C948 /* OlympContent.swift */,
+				F8442D952A90826400A80BE7 /* StartTradeVC.swift */,
 			);
 			path = Trade;
 			sourceTree = "<group>";
@@ -291,6 +294,8 @@
 			isa = PBXGroup;
 			children = (
 				F8C6A1922A4D7D2D007AE0CC /* Extension.swift */,
+				F8089AEF2A94B43B005F5590 /* Signal.json */,
+				F8089AF12A94B489005F5590 /* Timer.json */,
 				F8C6A1942A4EBDE3007AE0CC /* experience.json */,
 				F8C6A19B2A4EBE88007AE0CC /* 1 preloader.json */,
 				F8C6A1982A4EBE88007AE0CC /* 3 auto-trading.json */,
@@ -298,8 +303,6 @@
 				F8C6A1972A4EBE88007AE0CC /* 5 Free of charge.json */,
 				F8C6A19C2A4EBE88007AE0CC /* 6 comments.json */,
 				F8C6A1992A4EBE88007AE0CC /* 7 notification.json */,
-				F8C6A19D2A4EBE88007AE0CC /* Signal.json */,
-				F8C6A1962A4EBE88007AE0CC /* Timer.json */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -420,13 +423,13 @@
 				F8C6A1A42A4EBE88007AE0CC /* 6 comments.json in Resources */,
 				F8C6A17B2A4D693E007AE0CC /* LaunchScreen.storyboard in Resources */,
 				F8C6A1A32A4EBE88007AE0CC /* 1 preloader.json in Resources */,
+				F8089AF22A94B489005F5590 /* Timer.json in Resources */,
+				F8089AF02A94B43B005F5590 /* Signal.json in Resources */,
 				F8C6A1A12A4EBE88007AE0CC /* 7 notification.json in Resources */,
 				F8C6A1A02A4EBE88007AE0CC /* 3 auto-trading.json in Resources */,
 				F8C6A19F2A4EBE88007AE0CC /* 5 Free of charge.json in Resources */,
 				F8C6A1842A4D6F48007AE0CC /* Localizable.strings in Resources */,
-				F8C6A19E2A4EBE88007AE0CC /* Timer.json in Resources */,
 				F8C6A1A22A4EBE88007AE0CC /* 4 signal.json in Resources */,
-				F8C6A1A52A4EBE88007AE0CC /* Signal.json in Resources */,
 				F8C6A1782A4D693E007AE0CC /* Assets.xcassets in Resources */,
 				F8C6A1952A4EBDE3007AE0CC /* experience.json in Resources */,
 			);
@@ -499,6 +502,7 @@
 				F8BE51072A5406D50081C948 /* PairCell.swift in Sources */,
 				F8BE51232A5445280081C948 /* DetailViewController.swift in Sources */,
 				F8BE51032A5406AD0081C948 /* TradingView.swift in Sources */,
+				F8442D962A90826400A80BE7 /* StartTradeVC.swift in Sources */,
 				F8BE51182A543C490081C948 /* AccountController.swift in Sources */,
 				F8BE51012A54067D0081C948 /* TradeViewController.swift in Sources */,
 				F8BE511D2A5444CE0081C948 /* SupportModel.swift in Sources */,

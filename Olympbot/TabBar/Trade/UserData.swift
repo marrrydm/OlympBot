@@ -16,6 +16,14 @@ final class UserData {
         case sumProfitAfterActive
         case profitAfterActive
         case isWork
+        case showedTrade
+    }
+
+    static var showedTrade: Bool {
+        get {
+            guard let savedData = UserDefaults.standard.object(forKey: SettingsKeys.showedTrade.rawValue) as? Bool else { return false }
+            return savedData
+        }
     }
 
     static var isWork: Bool {

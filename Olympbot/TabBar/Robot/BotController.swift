@@ -16,43 +16,6 @@ class BotController: UIViewController, UIScrollViewDelegate {
         return labelTitle
     }()
 
-    private let emailImg = UIImageView(image: UIImage(named: "email"))
-    private let blockImg = UIImageView(image: UIImage(named: "block"))
-    private let infoImg = UIImageView(image: UIImage(named: "info"))
-
-    private let emailLabel: UILabel = {
-        let view = UILabel()
-        view.textColor = UIColor(red: 0.58, green: 0.61, blue: 0.66, alpha: 1)
-        view.text = "email1".localize()
-        view.numberOfLines = 0
-        view.lineBreakMode = .byWordWrapping
-        view.font = .systemFont(ofSize: 11, weight: .medium)
-
-        return view
-    }()
-
-    private let blockLabel: UILabel = {
-        let view = UILabel()
-        view.textColor = UIColor(red: 0.58, green: 0.61, blue: 0.66, alpha: 1)
-        view.text = "block1".localize()
-        view.numberOfLines = 0
-        view.lineBreakMode = .byWordWrapping
-        view.font = .systemFont(ofSize: 11, weight: .medium)
-
-        return view
-    }()
-
-    private let infoLabel: UILabel = {
-        let view = UILabel()
-        view.textColor = UIColor(red: 0.58, green: 0.61, blue: 0.66, alpha: 1)
-        view.text = "info1".localize()
-        view.numberOfLines = 0
-        view.lineBreakMode = .byWordWrapping
-        view.font = .systemFont(ofSize: 11, weight: .medium)
-
-        return view
-    }()
-
     private lazy var nextButton: UIButton = {
         let nextButton = UIButton()
         nextButton.backgroundColor = UIColor(red: 0.95, green: 0.32, blue: 0.19, alpha: 1)
@@ -471,7 +434,7 @@ class BotController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         view.backgroundColor = UIColor(red: 0.05, green: 0.06, blue: 0.07, alpha: 1)
-        view.addSubviews(titleLabel, emailImg, blockImg, infoImg, emailLabel, blockLabel, infoLabel, nextButton, viewForItems, viewCancel)
+        view.addSubviews(titleLabel, nextButton, viewForItems, viewCancel)
         viewForItems.addSubviews(pairLabel , animationTimer, animationSignal, profitLabel, profitLabelVal, balanceLbl, statusImg, statusLabel, statusLabelVal, amountImg, amountLabel, amountLabelVal, line, strategyImg, strategyLabel, strategyLabelVal, indicatorsImg, indicatorsLabel, indicatorsLabelVal, riskImg, riskLabel, riskLabelVal, profitImg, profitLabels, profitLabelsVal)
         animationTimer.addSubview(timeTitle)
         viewCancel.addSubviews(imgClose, imgOption, optionLbl, cancelButton, confirmButton)
@@ -658,42 +621,6 @@ class BotController: UIViewController, UIScrollViewDelegate {
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(5)
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
-        }
-
-        emailImg.snp.makeConstraints { make in
-            make.bottom.equalTo(blockImg.snp.top).offset(-20)
-            make.leading.equalTo(view.safeAreaLayoutGuide).inset(16)
-            make.height.width.equalTo(20)
-        }
-
-        blockImg.snp.makeConstraints { make in
-            make.bottom.equalTo(infoImg.snp.top).offset(-20)
-            make.leading.equalTo(view.safeAreaLayoutGuide).inset(16)
-            make.height.width.equalTo(20)
-        }
-
-        infoImg.snp.makeConstraints { make in
-            make.bottom.equalTo(nextButton.snp.top).offset(-34)
-            make.leading.equalTo(view.safeAreaLayoutGuide).inset(16)
-            make.height.width.equalTo(20)
-        }
-
-        emailLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(emailImg.snp.centerY)
-            make.leading.equalTo(emailImg.snp.trailing).offset(9)
-            make.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
-        }
-
-        blockLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(blockImg.snp.centerY)
-            make.leading.equalTo(blockImg.snp.trailing).offset(9)
-            make.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
-        }
-
-        infoLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(infoImg.snp.centerY)
-            make.leading.equalTo(infoImg.snp.trailing).offset(9)
-            make.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
         }
 
         nextButton.snp.makeConstraints { make in

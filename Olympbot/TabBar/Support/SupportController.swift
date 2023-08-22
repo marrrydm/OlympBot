@@ -46,8 +46,6 @@ class SupportController: UIViewController {
         }
     }
 
-
-    //MARK: - Configure UI
     private func configureTableView() {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false

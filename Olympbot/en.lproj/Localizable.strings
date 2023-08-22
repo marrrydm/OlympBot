@@ -6,7 +6,7 @@
 "onb3.title" = "Autotrading by signals ";
 "onb3.content" = 'With AI-driven signals analytics, our app achieves up to 73% successful trades';
 "onb4.title" = "Free of charge";
-"onb4.content" = 'Create an account and access our AI-robot';
+"onb4.content" = 'Free access our AI-robot DEMO accounts only';
 "onb5.title" = "Your opinion is very important";
 "onb5.content" = 'We carefully review all feedback and comments to improve our product';
 "onb6.title" = "Turn on notifications";
@@ -35,8 +35,8 @@
 "tabbar.account" = "Account";
 
 "trade.balance" = "Balance";
-"trade.down" = "Down";
-"trade.up" = "Up";
+"trade.down" = "SELL";
+"trade.up" = "BUY";
 "trade.choose" = "Сurrency";
 "minute" = "minute";
 "minutes" = "minutes";
@@ -71,9 +71,6 @@
 "Aggressive1" = "Recommended balance:  500 Đ  and more";
 "Profit limit" = "Profit limit";
 "turn" = "If you do not turn on this setting the bot will trade for 3 hours, then stop";
-"email1" = "For questions about improving the program, write to the mail: support@olymp-robot.com.";
-"block1" = "The OlympRobot app is a third-party development and is not directly related to Olymp Trade.";
-"info1" = "We neither provide trading, financial, or investment advice nor encourage mentioned activities.";
 "Start trading" = "Start trading";
 "Done" = "Done";
 "Optimal strategy" = "Optimal strategy";
@@ -150,3 +147,6 @@
 "Confirm" = "Confirm";
 "Cancel" = "Cancel";
 "doneBot" = "Are you sure you want to stop the robot?";
+
+"trade.start.1" = "Practice on a risk-free account before you start trading";
+"trade.start.2" = "Get ready to enhance your trading skills with our risk-free account simulator";

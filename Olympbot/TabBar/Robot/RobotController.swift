@@ -400,43 +400,6 @@ class RobotController: UIViewController, UIScrollViewDelegate {
         return scrollView
     }()
 
-    private let emailImg = UIImageView(image: UIImage(named: "email"))
-    private let blockImg = UIImageView(image: UIImage(named: "block"))
-    private let infoImg = UIImageView(image: UIImage(named: "info"))
-
-    private let emailLabel: UILabel = {
-        let view = UILabel()
-        view.textColor = UIColor(red: 0.58, green: 0.61, blue: 0.66, alpha: 1)
-        view.text = "email1".localize()
-        view.numberOfLines = 0
-        view.lineBreakMode = .byWordWrapping
-        view.font = .systemFont(ofSize: 11, weight: .medium)
-
-        return view
-    }()
-
-    private let blockLabel: UILabel = {
-        let view = UILabel()
-        view.textColor = UIColor(red: 0.58, green: 0.61, blue: 0.66, alpha: 1)
-        view.text = "block1".localize()
-        view.numberOfLines = 0
-        view.lineBreakMode = .byWordWrapping
-        view.font = .systemFont(ofSize: 11, weight: .medium)
-
-        return view
-    }()
-
-    private let infoLabel: UILabel = {
-        let view = UILabel()
-        view.textColor = UIColor(red: 0.58, green: 0.61, blue: 0.66, alpha: 1)
-        view.text = "info1".localize()
-        view.numberOfLines = 0
-        view.lineBreakMode = .byWordWrapping
-        view.font = .systemFont(ofSize: 11, weight: .medium)
-
-        return view
-    }()
-
     private lazy var nextButton: UIButton = {
         let nextButton = UIButton()
         nextButton.backgroundColor = UIColor(red: 0, green: 0.58, blue: 1, alpha: 1)
@@ -643,7 +606,6 @@ class RobotController: UIViewController, UIScrollViewDelegate {
 
     override func loadView() {
         super.loadView()
-        print(UserData.isWork)
         if UserData.isWork {
             let date1 = Date()
             let date2 = UserData.dateAlgorithmStart ?? Date()
@@ -712,7 +674,7 @@ class RobotController: UIViewController, UIScrollViewDelegate {
         question1Img.isUserInteractionEnabled = true
 
         view.addSubviews(scrollView)
-        scrollView.addSubviews(titleLabel, balanceView, pairView, assetLabel, strategyLabel, question1Img, autoView, customView, autoView2, customView2, riskLabel, question2Img, optimalView, aggressiveView, optimalView2, aggressiveView2, profitView, profitsLabel, turnLabel, emailImg, blockImg, infoImg, emailLabel, blockLabel, infoLabel, nextButton, lastView)
+        scrollView.addSubviews(titleLabel, balanceView, pairView, assetLabel, strategyLabel, question1Img, autoView, customView, autoView2, customView2, riskLabel, question2Img, optimalView, aggressiveView, optimalView2, aggressiveView2, profitView, profitsLabel, turnLabel, nextButton, lastView)
         balanceView.addSubviews(balanceTitleLabel, balanceValueLabel, userImg)
         pairView.addSubviews(pairLabel, arrowImg)
         autoView.addSubviews(check1Img, autoLabel1, autoLabel2)
@@ -1024,44 +986,8 @@ class RobotController: UIViewController, UIScrollViewDelegate {
             make.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
         }
 
-        emailImg.snp.makeConstraints { make in
-            make.top.equalTo(turnLabel.snp.bottom).offset(31)
-            make.leading.equalTo(view.safeAreaLayoutGuide).inset(16)
-            make.height.width.equalTo(20)
-        }
-
-        blockImg.snp.makeConstraints { make in
-            make.top.equalTo(emailImg.snp.bottom).offset(20)
-            make.leading.equalTo(view.safeAreaLayoutGuide).inset(16)
-            make.height.width.equalTo(20)
-        }
-
-        infoImg.snp.makeConstraints { make in
-            make.top.equalTo(blockImg.snp.bottom).offset(20)
-            make.leading.equalTo(view.safeAreaLayoutGuide).inset(16)
-            make.height.width.equalTo(20)
-        }
-
-        emailLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(emailImg.snp.centerY)
-            make.leading.equalTo(emailImg.snp.trailing).offset(9)
-            make.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
-        }
-
-        blockLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(blockImg.snp.centerY)
-            make.leading.equalTo(blockImg.snp.trailing).offset(9)
-            make.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
-        }
-
-        infoLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(infoImg.snp.centerY)
-            make.leading.equalTo(infoImg.snp.trailing).offset(9)
-            make.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
-        }
-
         nextButton.snp.makeConstraints { make in
-            make.top.equalTo(infoLabel.snp.bottom).offset(9)
+            make.top.equalTo(turnLabel.snp.bottom).offset(11)
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
             make.height.width.equalTo(50)
         }

@@ -46,50 +46,6 @@ class TradeViewController: UIViewController, UITextFieldDelegate {
         return imgArrowRight
     }()
 
-    private let timerView: UIView = {
-        let timerView = UIView()
-        timerView.layer.cornerRadius = 6
-        timerView.backgroundColor = UIColor(red: 0.14, green: 0.19, blue: 0.28, alpha: 1)
-
-        return timerView
-    }()
-
-    private var timerVal: UITextField = {
-        var timerVal = UITextField()
-        timerVal.textAlignment = .center
-        timerVal.isUserInteractionEnabled = false
-        timerVal.keyboardType = .numbersAndPunctuation
-        timerVal.textColor = .white
-        timerVal.font = .systemFont(ofSize: 16, weight: .semibold)
-        timerVal.text = "01:00"
-
-        return timerVal
-    }()
-
-    private lazy var plusTime: UIButton = {
-        let plusTime = UIButton()
-        plusTime.isUserInteractionEnabled = true
-        plusTime.setImage(UIImage(named: "plus"), for: .normal)
-        plusTime.backgroundColor = UIColor(red: 0.125, green: 0.137, blue: 0.184, alpha: 0.8)
-        plusTime.layer.cornerRadius = 6
-        plusTime.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
-        plusTime.addTarget(self, action: #selector(tapPlusMinus), for: .touchUpInside)
-
-        return plusTime
-    }()
-
-    private lazy var minusTime: UIButton = {
-        let minusTime = UIButton()
-        minusTime.isUserInteractionEnabled = true
-        minusTime.layer.cornerRadius = 6
-        minusTime.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
-        minusTime.backgroundColor = UIColor(red: 0.125, green: 0.137, blue: 0.184, alpha: 0.8)
-        minusTime.setImage(UIImage(named: "minus"), for: .normal)
-        minusTime.addTarget(self, action: #selector(tapPlusMinus), for: .touchUpInside)
-
-        return minusTime
-    }()
-
     private let investment: UIView = {
         let investment = UIView()
         investment.layer.cornerRadius = 6
@@ -205,8 +161,6 @@ class TradeViewController: UIViewController, UITextFieldDelegate {
 
     private var timerValue = 1
     private var invValue = 100.0
-    private var timeArr = [1, 3, 5]
-    private var index = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -234,6 +188,8 @@ class TradeViewController: UIViewController, UITextFieldDelegate {
         if timer == nil {
             animationStart()
         }
+
+        UserDefaults.standard.set(true, forKey: UserData.SettingsKeys.showedTrade.rawValue)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -243,8 +199,7 @@ class TradeViewController: UIViewController, UITextFieldDelegate {
 
     private func setupViews() {
         view.addSubviews(chart, chartView)
-        view.addSubviews(titleBalance, timerView, investment, sellView, buyView, labelBalance, pairLabel, imgArrowRight)
-        timerView.addSubviews(timerVal, plusTime, minusTime)
+        view.addSubviews(titleBalance, investment, sellView, buyView, labelBalance, pairLabel, imgArrowRight)
         investment.addSubviews(investmentVal, plusInv, minusInv)
         sellView.addSubviews(sellLbl, sellImg)
         buyView.addSubviews(buyLbl, buyImg)
@@ -301,7 +256,7 @@ class TradeViewController: UIViewController, UITextFieldDelegate {
 
         investment.translatesAutoresizingMaskIntoConstraints = false
         investment.bottomAnchor.constraint(equalTo: sellView.topAnchor, constant: -23).isActive = true
-        investment.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 5.5).isActive = true
+        investment.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         investment.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         investment.heightAnchor.constraint(equalToConstant: 37).isActive = true
 
@@ -309,31 +264,6 @@ class TradeViewController: UIViewController, UITextFieldDelegate {
         investmentVal.centerYAnchor.constraint(equalTo: investment.centerYAnchor).isActive = true
         investmentVal.leadingAnchor.constraint(equalTo: investment.leadingAnchor, constant: 30).isActive = true
         investmentVal.trailingAnchor.constraint(equalTo: investment.trailingAnchor, constant: -30).isActive = true
-
-        plusTime.translatesAutoresizingMaskIntoConstraints = false
-        plusTime.centerYAnchor.constraint(equalTo: timerView.centerYAnchor).isActive = true
-        plusTime.trailingAnchor.constraint(equalTo: timerView.trailingAnchor).isActive = true
-        plusTime.topAnchor.constraint(equalTo: timerView.topAnchor).isActive = true
-        plusTime.bottomAnchor.constraint(equalTo: timerView.bottomAnchor).isActive = true
-        plusTime.widthAnchor.constraint(equalToConstant: 30).isActive = true
-
-        minusTime.translatesAutoresizingMaskIntoConstraints = false
-        minusTime.centerYAnchor.constraint(equalTo: timerView.centerYAnchor).isActive = true
-        minusTime.leadingAnchor.constraint(equalTo: timerView.leadingAnchor).isActive = true
-        minusTime.topAnchor.constraint(equalTo: timerView.topAnchor).isActive = true
-        minusTime.bottomAnchor.constraint(equalTo: timerView.bottomAnchor).isActive = true
-        minusTime.widthAnchor.constraint(equalToConstant: 30).isActive = true
-
-        timerView.translatesAutoresizingMaskIntoConstraints = false
-        timerView.bottomAnchor.constraint(equalTo: sellView.topAnchor, constant: -23).isActive = true
-        timerView.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -5.5).isActive = true
-        timerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-        timerView.heightAnchor.constraint(equalToConstant: 37).isActive = true
-
-        timerVal.translatesAutoresizingMaskIntoConstraints = false
-        timerVal.centerYAnchor.constraint(equalTo: timerView.centerYAnchor).isActive = true
-        timerVal.leadingAnchor.constraint(equalTo: timerView.leadingAnchor, constant: 30).isActive = true
-        timerVal.trailingAnchor.constraint(equalTo: timerView.trailingAnchor, constant: -30).isActive = true
 
         titleBalance.translatesAutoresizingMaskIntoConstraints = false
         titleBalance.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5).isActive = true
@@ -344,7 +274,7 @@ class TradeViewController: UIViewController, UITextFieldDelegate {
         labelBalance.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
 
         pairLabel.translatesAutoresizingMaskIntoConstraints = false
-        pairLabel.bottomAnchor.constraint(equalTo: timerView.topAnchor, constant: -80).isActive = true
+        pairLabel.bottomAnchor.constraint(equalTo: investment.topAnchor, constant: -80).isActive = true
         pairLabel.leadingAnchor.constraint(equalTo: chartView.leadingAnchor, constant: 12).isActive = true
 
         imgArrowRight.translatesAutoresizingMaskIntoConstraints = false
@@ -404,8 +334,7 @@ extension TradeViewController {
     }
 
     private func taskForPair(amount: Double) {
-        let time = timerValue * 60
-        DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.seconds(time)) { [self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.seconds(60)) { [self] in
             let profit = Double.random(in: 0.0..<0.075)
             let sign = Bool.random() ? 1.0 : -1.0
             var balance = UserData.balance
@@ -451,31 +380,11 @@ extension TradeViewController {
         switch sender {
         case plusInv: invValue += 100
             investmentVal.text = "\(Int(invValue))"
-        case plusTime: if timerValue != 5 {
-            index += 1
-            timerValue = timeArr[index]
-            timerVal.text = "0\(timerValue):00"
-        } else {
-            index = 0
-            timerValue = 1
-            timerVal.text = "0\(timerValue):00"
-        }
         case minusInv: invValue -= 100
             if invValue < 0 {
                 invValue = Double(Int(0))
             }
             investmentVal.text = "\(Int(invValue))"
-        case minusTime: if timerValue != 1 {
-            index -= 1
-            if index != -1 {
-                timerValue = timeArr[index]
-                timerVal.text = "0\(timerValue):00"
-            }
-        } else {
-            index = 2
-            timerValue = 5
-            timerVal.text = "0\(timerValue):00"
-        }
         default: break
         }
     }

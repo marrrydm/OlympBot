@@ -195,9 +195,15 @@ extension Onboarding1 {
             default: break
             }
         } else {
-            let vc =  TabBarController()
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: false)
+            if UserData.showedAuth {
+                let vc = TabBarController()
+                vc.modalPresentationStyle = .fullScreen
+                present(vc, animated: false)
+            } else {
+                let vc = StartLoginVC()
+                vc.modalPresentationStyle = .fullScreen
+                present(vc, animated: false)
+            }
         }
     }
 }

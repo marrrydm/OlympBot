@@ -10,7 +10,7 @@ final class OlympContent {
     }
 
     private func getCurrencies() {
-        let url = "http://api.apilayer.com/currency_data/live?currencies=EUR,AUD,GBP,CAD,JPY,NZD,CHF&apikey=FXQq8L1fxvcPOKNzQcfS4LDe4q0CEIeM"
+        let url = "http://api.apilayer.com/currency_data/live?currencies=EUR,AUD,GBP,CAD,JPY,NZD,CHF&apikey=0pcNVMLkLbVGxyXj1v0zrXm3hwS5bIvh"
         if let url = URL(string: url) {
             URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
                 guard let self = self else { return }

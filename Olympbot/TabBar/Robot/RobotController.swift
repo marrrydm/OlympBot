@@ -419,7 +419,7 @@ class RobotController: UIViewController, UIScrollViewDelegate {
         nextButton.setTitleColor(.white, for: .normal)
         nextButton.setTitle("Confirm".localize(), for: .normal)
         nextButton.titleLabel?.font = .systemFont(ofSize: 17, weight: .bold)
-        nextButton.addTarget(self, action: #selector(goRobot), for: .touchUpInside)
+        nextButton.addTarget(self, action: #selector(goNext), for: .touchUpInside)
 
         return nextButton
     }()
@@ -581,6 +581,97 @@ class RobotController: UIViewController, UIScrollViewDelegate {
         return activityIndicator
     }()
 
+
+    private lazy var closeSelection: UIImageView = {
+        var close = UIImageView()
+        close.contentMode = .scaleAspectFit
+        close.isUserInteractionEnabled = true
+        close.image = UIImage(named: "cross")
+        close.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closePage)))
+
+        return close
+    }()
+
+    private let viewAccount: UIView = {
+        let line1 = UIView()
+        line1.backgroundColor = UIColor(red: 0.13, green: 0.14, blue: 0.18, alpha: 1)
+        line1.layer.cornerRadius = 20
+
+        return line1
+    }()
+
+    private let accountTitleLabel: UILabel = {
+        let labelTitle = UILabel()
+        labelTitle.textColor = .white
+        labelTitle.text = "Account selection".localize()
+        labelTitle.font = .systemFont(ofSize: 18, weight: .bold)
+        labelTitle.textAlignment = .center
+
+        return labelTitle
+    }()
+
+    private lazy var viewSignal: UIView = {
+        let line1 = UIView()
+        line1.backgroundColor = .clear
+        line1.layer.cornerRadius = 10
+        line1.layer.borderWidth = 1
+        line1.layer.borderColor = UIColor(red: 0.176, green: 0.275, blue: 0.392, alpha: 1).cgColor
+        line1.tag = 1
+        line1.isUserInteractionEnabled = true
+        line1.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goRobot)))
+
+        return line1
+    }()
+
+    private lazy var viewBot: UIView = {
+        let line1 = UIView()
+        line1.backgroundColor = .clear
+        line1.layer.cornerRadius = 10
+        line1.layer.borderWidth = 1
+        line1.layer.borderColor = UIColor(red: 0.176, green: 0.275, blue: 0.392, alpha: 1).cgColor
+        line1.tag = 2
+        line1.isUserInteractionEnabled = true
+        line1.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goRobot)))
+
+        return line1
+    }()
+
+    private let signalTitleLabel: UILabel = {
+        let labelTitle = UILabel()
+        labelTitle.textColor = .white
+        labelTitle.text = "Signals account".localize()
+        labelTitle.font = .systemFont(ofSize: 15, weight: .regular)
+        labelTitle.textAlignment = .left
+
+        return labelTitle
+    }()
+
+    private let botTitleLabel: UILabel = {
+        let labelTitle = UILabel()
+        labelTitle.textColor = .white
+        labelTitle.text = "Bot account".localize()
+        labelTitle.font = .systemFont(ofSize: 15, weight: .regular)
+        labelTitle.textAlignment = .left
+
+        return labelTitle
+    }()
+
+    private var signalImg: UIImageView = {
+        var close = UIImageView()
+        close.contentMode = .scaleAspectFit
+        close.image = UIImage(named: "signals")
+
+        return close
+    }()
+
+    private var botImg: UIImageView = {
+        var close = UIImageView()
+        close.contentMode = .scaleAspectFit
+        close.image = UIImage(named: "bot")
+
+        return close
+    }()
+
     private var pair = OlympContent.shared.pairs.first
     private var titleTopic = "Auto".localize()
     private var riskTopic = "Optimal".localize()
@@ -606,6 +697,23 @@ class RobotController: UIViewController, UIScrollViewDelegate {
 
     override func loadView() {
         super.loadView()
+        if UserData.isWorkSignal {
+            let date1 = Date()
+            let date2 = UserData.dateAlgorithmStart ?? Date()
+            let between = abs(hourBetween(start: date1, end: date2))
+            if between < 1 {
+                DispatchQueue.main.async { [self] in
+                    viewDark.isHidden = false
+                    activityIndicator.startAnimating()
+                }
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
+                    let vc = SignalController()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
+        }
+
         if UserData.isWork {
             let date1 = Date()
             let date2 = UserData.dateAlgorithmStart ?? Date()
@@ -1003,6 +1111,64 @@ class RobotController: UIViewController, UIScrollViewDelegate {
         viewConfirm.addSubviews(viewForItems, close, confirmButton, conformationTitleLabel)
         viewForItems.addSubviews(line1, line2, line3, strategyLblConfirm, strategyLblConfirmVal, indicatorsLblConfirm, indicatorsLblConfirmVal, riskLblConfirm, riskLblConfirmVal, profitLblConfirm, profitLblConfirmVal)
 
+        view.addSubviews(viewAccount)
+        viewAccount.addSubviews(accountTitleLabel, closeSelection, viewSignal, viewBot)
+        viewSignal.addSubviews(signalTitleLabel, signalImg)
+        viewBot.addSubviews(botTitleLabel, botImg)
+        viewAccount.isHidden = true
+
+        signalTitleLabel.snp.makeConstraints { make in
+            make.leading.equalTo(signalImg.snp.trailing).offset(11)
+            make.centerY.equalTo(signalImg.snp.centerY)
+        }
+
+        signalImg.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(16)
+            make.centerY.equalToSuperview()
+            make.height.width.equalTo(20)
+        }
+
+        botTitleLabel.snp.makeConstraints { make in
+            make.leading.equalTo(botImg.snp.trailing).offset(11)
+            make.centerY.equalTo(botImg.snp.centerY)
+        }
+
+        botImg.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(16)
+            make.centerY.equalToSuperview()
+            make.height.width.equalTo(20)
+        }
+
+        viewAccount.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(15)
+            make.top.equalTo(accountTitleLabel.snp.top).offset(-16)
+            make.leading.trailing.equalToSuperview()
+        }
+
+        closeSelection.snp.makeConstraints { make in
+            make.bottom.equalTo(viewSignal.snp.top).offset(-18)
+            make.trailing.equalToSuperview().inset(16)
+            make.height.width.equalTo(24)
+        }
+
+        accountTitleLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(closeSelection.snp.centerY)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.bottom.equalTo(viewSignal.snp.top).offset(-18)
+        }
+
+        viewSignal.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.height.equalTo(50)
+            make.bottom.equalTo(viewBot.snp.top).offset(-8)
+        }
+
+        viewBot.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.height.equalTo(50)
+            make.bottom.equalTo(viewAccount.snp.bottom).offset(-30)
+        }
+
         viewDark.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -1134,13 +1300,31 @@ extension RobotController {
         sender.isOn ? (profitLabel.text = "120") : (profitLabel.text = "-")
     }
 
-    @objc private func goRobot() {
+    @objc private func goNext() {
+        viewAccount.isHidden = false
+        viewConfirm.isHidden = true
+    }
+
+    @objc private func goRobot(sender: UITapGestureRecognizer) {
         viewDark.isHidden = false
+        viewAccount.isHidden = true
         activityIndicator.startAnimating()
-        UserDefaults.standard.set(true, forKey: UserData.SettingsKeys.isWork.rawValue)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            let vc = BotController()
-            self.navigationController?.pushViewController(vc, animated: true)
+
+
+        switch sender.view!.tag {
+        case 1:
+            UserDefaults.standard.set(true, forKey: UserData.SettingsKeys.isWorkSignal.rawValue)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                let vc = SignalController()
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        case 2:
+            UserDefaults.standard.set(true, forKey: UserData.SettingsKeys.isWork.rawValue)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                let vc = BotController()
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        default: break
         }
     }
 
@@ -1158,6 +1342,7 @@ extension RobotController {
 
     @objc private func closePage() {
         viewConfirm.isHidden = true
+        viewAccount.isHidden = true
     }
 
     @objc private func tapOnStrategy() {

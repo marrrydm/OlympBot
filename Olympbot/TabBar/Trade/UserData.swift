@@ -16,7 +16,17 @@ final class UserData {
         case sumProfitAfterActive
         case profitAfterActive
         case isWork
+        case isWorkSignal
         case showedTrade
+        case showedAuth
+        case login
+    }
+
+    static var showedAuth: Bool {
+        get {
+            guard let savedData = UserDefaults.standard.object(forKey: SettingsKeys.showedAuth.rawValue) as? Bool else { return false }
+            return savedData
+        }
     }
 
     static var showedTrade: Bool {
@@ -29,6 +39,13 @@ final class UserData {
     static var isWork: Bool {
         get {
             guard let savedData = UserDefaults.standard.object(forKey: SettingsKeys.isWork.rawValue) as? Bool else { return false }
+            return savedData
+        }
+    }
+
+    static var isWorkSignal: Bool {
+        get {
+            guard let savedData = UserDefaults.standard.object(forKey: SettingsKeys.isWorkSignal.rawValue) as? Bool else { return false }
             return savedData
         }
     }
@@ -50,6 +67,13 @@ final class UserData {
     static var pairVal: String {
         get {
             guard let savedData = UserDefaults.standard.object(forKey: SettingsKeys.pairVal.rawValue) as? String else { return "" }
+            return savedData
+        }
+    }
+
+    static var login: String {
+        get {
+            guard let savedData = UserDefaults.standard.object(forKey: SettingsKeys.login.rawValue) as? String else { return "" }
             return savedData
         }
     }

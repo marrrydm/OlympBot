@@ -9,8 +9,6 @@ target 'Olympbot' do
   pod 'SnapKit'
   pod 'AdvancedPageControl'
   pod 'IQKeyboardManagerSwift'
-  pod 'Firebase/Analytics'
-  pod 'AppsFlyerFramework'
   pod 'lottie-ios'
 
 end

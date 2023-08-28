@@ -12,23 +12,6 @@
 "onb6.title" = "Turn on notifications";
 "onb6.content" = 'Watch our trading bot in real time';
 
-"title.start.login" = "Already have an Olymp Trade account?";
-"Log in" = "Log in";
-"create" = "Create a new account";
-"Registration" = "Registration";
-"title.reg.1" = "Create an";
-"title.reg.2" = "Olymp Trade";
-"title.reg.3" = "account";
-"email" = "Email";
-"password" = "Password";
-"Open an account" = "Open an account";
-"confirm" = "I'm 18 years old, and I agree to Olymp Trade Terms & Conditions & Privacy Policy, as well as to OlympRobot Terms & Conditions & Privacy Policy";
-"Forgot password?" = "Forgot password?";
-"Error" = "Error";
-"Invalid email" = "Invalid email";
-"OK" = "OK";
-"RememberData" = "Remember data for automatic authorization?";
-
 "tabbar.platform" = "Platform";
 "tabbar.robot" = "Robot";
 "tabbar.support" = "Support";
@@ -42,10 +25,6 @@
 "minutes" = "minutes";
 "trade.open1" = "Trade will closed after ";
 "trade.open2" = "Open price: ";
-"empty.title" = "Trades is empty";
-"empty.content" = "You have not made any trade from this account yet";
-"historu.open" = "Quotation, opening:";
-"historu.close" = "Quotation, closing:";
 
 "account.policy" = "Privacy Policy";
 "account.terms" = "Terms of use";
@@ -150,3 +129,36 @@
 
 "trade.start.1" = "Practice on a risk-free account before you start trading";
 "trade.start.2" = "Get ready to enhance your trading skills with our risk-free account simulator";
+
+"title.start.login" = "Already have an Olymp Trade account?";
+"Log in" = "Log in";
+"create" = "Create a new account";
+"Registration" = "Registration";
+"title.reg.1" = "Create an";
+"title.reg.2" = "Olymp Trade";
+"title.reg.3" = "account";
+"email" = "Email";
+"password" = "Password";
+"Open an account" = "Open an account";
+"confirm1" = "I'm 18 years old, and I agree";
+"confirm2" = "Terms & Conditions";
+"confirm3" = "Privacy Policy";
+"Yes" = "Yes";
+"No" = "No";
+"Forgot password?" = "Forgot password?";
+"Error" = "Error";
+"Invalid email" = "Invalid email";
+"OK" = "OK";
+"RememberData" = "Remember data for automatic authorization?";
+
+"ANALYZING..." = "ANALYZING...";
+"BUY" = "BUY";
+"SELL" = "SELL";
+"STRONG BUY" = "STRONG BUY";
+"STRONG SELL" = "STRONG SELL";
+"Account selection" = "Account selection";
+"Signals account" = "Signals account";
+"Bot account" = "Bot account";
+"Signal" = "Signal";
+"Your trading session is finished" = "Your trading session is finished";
+"lbl.content.bot" = "Stay informed, stay confident, and keep achieving your financial goals";

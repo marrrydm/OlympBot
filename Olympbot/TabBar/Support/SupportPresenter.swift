@@ -32,6 +32,10 @@ class SupportPresenter: SupportViewPreseneterProtocol {
                 """, image: [UIImage(named: "forex")], id: 0))
         ],
         [
+            LearningModel(topic: "What is an Olymp robot, and how it works?", text: LearningInfo(
+                text: """
+                    Olymp robot is a fully automated, AI-based algorithmic trading software that helps traders of any level learn best trading practices.
+                    """, image: [UIImage(named: "forex")], id: 0)),
             LearningModel(topic: "Which asset to choose?", text: LearningInfo(
                 text: """
                     Currencies are the most commonly traded asset class in the forex market. These are the world's major currencies, including the US dollar, the euro, the British pound, the Japanese yen, and the Swiss franc. You can choose any you prefer.

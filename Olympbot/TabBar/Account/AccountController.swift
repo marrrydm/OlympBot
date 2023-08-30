@@ -47,8 +47,6 @@ class AccountViewController: UIViewController {
         let view = UIView()
         view.backgroundColor = UIColor(red: 0.14, green: 0.19, blue: 0.28, alpha: 1)
         view.isUserInteractionEnabled = true
-        view.layer.cornerRadius = 13
-        view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(termsAction)))
 
         return view
@@ -64,6 +62,47 @@ class AccountViewController: UIViewController {
     }()
 
     private let termsImg = UIImageView(image: UIImage(named: "toRight"))
+
+    private lazy var logoutView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 0.14, green: 0.19, blue: 0.28, alpha: 1)
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(logoutAction)))
+
+        return view
+    }()
+
+    private let logoutViewLabel: UILabel = {
+        let view = UILabel()
+        view.text = "Log out".localize()
+        view.textColor = .white
+        view.font = .systemFont(ofSize: 13, weight: .medium)
+
+        return view
+    }()
+
+    private let logoutImg = UIImageView(image: UIImage(named: "toRight"))
+
+    private lazy var deleteView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 0.14, green: 0.19, blue: 0.28, alpha: 1)
+        view.isUserInteractionEnabled = true
+        view.layer.cornerRadius = 13
+        view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(deleteAction)))
+
+        return view
+    }()
+
+    private let deleteViewLabel: UILabel = {
+        let view = UILabel()
+        view.textColor = .white
+        view.text = "account.delete".localize()
+        view.font = .systemFont(ofSize: 13, weight: .medium)
+
+        return view
+    }()
+
 
     private let userName: UILabel = {
         let view = UILabel()
@@ -92,10 +131,12 @@ class AccountViewController: UIViewController {
 
         userName.text = "User_".localize() + "\(UserData.userId)"
         idUser.text = "ID " + "\(UserData.userId)"
-        view.addSubviews(titleLabel, option, privacyView, termsView, userName, idUser, personImg)
+        view.addSubviews(titleLabel, option, privacyView, termsView, userName, idUser, personImg, logoutView, deleteView)
 
         privacyView.addSubviews(privacyViewLabel, privacyImg)
         termsView.addSubviews(termsViewLabel, termsImg)
+        logoutView.addSubviews(logoutViewLabel, logoutImg)
+        deleteView.addSubviews(deleteViewLabel)
 
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(10)
@@ -158,6 +199,34 @@ class AccountViewController: UIViewController {
             make.trailing.equalToSuperview().offset(-16)
             make.height.width.equalTo(24)
         }
+
+        logoutView.snp.makeConstraints { make in
+            make.top.equalTo(termsView.snp.bottom).offset(1)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(48)
+        }
+
+        logoutViewLabel.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalToSuperview().offset(16)
+        }
+
+        logoutImg.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.trailing.equalToSuperview().offset(-16)
+            make.height.width.equalTo(24)
+        }
+
+        deleteView.snp.makeConstraints { make in
+            make.top.equalTo(logoutView.snp.bottom).offset(1)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(48)
+        }
+
+        deleteViewLabel.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalToSuperview().offset(16)
+        }
     }
 }
 
@@ -176,5 +245,37 @@ extension AccountViewController {
 
     @objc private func pop() {
         navigationController?.popViewController(animated: true)
+    }
+
+    @objc private func deleteAction() {
+        alertPage()
+    }
+
+    @objc private func logoutAction() {
+        UserDefaults.standard.set(false, forKey: UserData.SettingsKeys.showedAuth.rawValue)
+        let vc = TabBarController()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: false)
+    }
+
+    private func alertPage() {
+        let alertError = UIAlertController(title: "DeleteData".localize(), message: nil, preferredStyle: .alert)
+        alertError.addAction(UIAlertAction(title: "Yes".localize(), style: .default, handler: { (action: UIAlertAction!) in
+            UserDefaults.standard.set(false, forKey: UserData.SettingsKeys.showedAuth.rawValue)
+            UserDefaults.standard.set(false, forKey: UserData.SettingsKeys.showedTrade.rawValue)
+            UserDefaults.standard.set(false, forKey: UserData.SettingsKeys.isWorkSignal.rawValue)
+            UserDefaults.standard.set(false, forKey: UserData.SettingsKeys.isWork.rawValue)
+            UserDefaults.standard.set("", forKey: UserData.SettingsKeys.login.rawValue)
+            UserDefaults.standard.set(1000, forKey: UserData.SettingsKeys.balance.rawValue)
+            UserDefaults.standard.set(0, forKey: UserData.SettingsKeys.userId.rawValue)
+
+            let vc = TabBarController()
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: false)
+        }))
+        alertError.addAction(UIAlertAction(title: "No".localize(), style: .default, handler: {(action: UIAlertAction!) in
+
+        }))
+        present(alertError, animated: true)
     }
 }

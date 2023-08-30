@@ -266,6 +266,7 @@ class LoginVC: UIViewController {
         btn1.setTitleColor(.white, for: .normal)
         btn1.setTitle("Open an account".localize(), for: .normal)
         btn1.titleLabel?.font = .systemFont(ofSize: 17, weight: .bold)
+        btn1.alpha = 0.5
         btn1.addTarget(self, action: #selector(tapButtonNext), for: .touchUpInside)
 
         btn1.snp.makeConstraints { make in
@@ -315,7 +316,9 @@ extension LoginVC {
         btnMark.isSelected = !btnMark.isSelected
         let isValid = isValidEmail(emailTextField.text ?? "")
         if !emailTextField.text!.isEmpty && !passwordTextField.text!.isEmpty && isValid && btnMark.currentBackgroundImage == UIImage(named: "mark") {
-//            nextButton.alpha = 1
+            btn1.alpha = 1
+        } else {
+            btn1.alpha = 0.5
         }
     }
 
@@ -327,27 +330,31 @@ extension LoginVC {
 
     @objc private func tapButtonNext(sender: UITapGestureRecognizer) {
         let isValid = isValidEmail(emailTextField.text ?? "")
-        if !emailTextField.text!.isEmpty && !passwordTextField.text!.isEmpty {
-            if isValid {
-                if btnMark.currentBackgroundImage == UIImage(named: "mark") {
-                    let alertError = UIAlertController(title: "RememberData".localize(), message: nil, preferredStyle: .alert)
-                    alertError.addAction(UIAlertAction(title: "Yes".localize(), style: .default, handler: { [self](action: UIAlertAction!) in
-                        UserDefaults.standard.set(emailTextField.text, forKey: UserData.SettingsKeys.login.rawValue)
-                        UserDefaults.standard.set(true, forKey: UserData.SettingsKeys.showedAuth.rawValue)
-                        let vc = TabBarController()
-                        vc.modalPresentationStyle = .fullScreen
-                        self.present(vc, animated: false)
-                        UserDefaults.standard.set(self.emailTextField.text, forKey: UserData.SettingsKeys.login.rawValue)
-                    }))
-                    alertError.addAction(UIAlertAction(title: "No".localize(), style: .default, handler: {(action: UIAlertAction!) in
-                        let vc = TabBarController()
-                        vc.modalPresentationStyle = .fullScreen
-                        self.present(vc, animated: false)
-                    }))
-                    present(alertError, animated: true)
+        if !emailTextField.text!.isEmpty {
+            if !passwordTextField.text!.isEmpty {
+                if isValid {
+                    if btnMark.currentBackgroundImage == UIImage(named: "mark") && btn1.alpha == 1 {
+                        let alertError = UIAlertController(title: "RememberData".localize(), message: nil, preferredStyle: .alert)
+                        alertError.addAction(UIAlertAction(title: "Yes".localize(), style: .default, handler: { [self](action: UIAlertAction!) in
+                            UserDefaults.standard.set(emailTextField.text, forKey: UserData.SettingsKeys.login.rawValue)
+                            UserDefaults.standard.set(true, forKey: UserData.SettingsKeys.showedAuth.rawValue)
+                            let vc = TabBarController()
+                            vc.modalPresentationStyle = .fullScreen
+                            self.present(vc, animated: false)
+                            UserDefaults.standard.set(self.emailTextField.text, forKey: UserData.SettingsKeys.login.rawValue)
+                        }))
+                        alertError.addAction(UIAlertAction(title: "No".localize(), style: .default, handler: {(action: UIAlertAction!) in
+                            let vc = TabBarController()
+                            vc.modalPresentationStyle = .fullScreen
+                            self.present(vc, animated: false)
+                        }))
+                        present(alertError, animated: true)
+                    } else {
+                        btn1.alpha = 0.5
+                    }
                 }
             } else {
-                let alertError = UIAlertController(title: "Error".localize(), message: "Invalid email".localize(), preferredStyle: .alert)
+                let alertError = UIAlertController(title: "Error".localize(), message: "Invalid password".localize(), preferredStyle: .alert)
                 alertError.addAction(UIAlertAction(title: "ОК", style: .default))
                 present(alertError, animated: true)
             }

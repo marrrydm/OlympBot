@@ -33,6 +33,7 @@
 "DeleteData" = "Are you sure you want to delete your account?";
 "Yes" = "Yes";
 "No" = "No";
+"Log out" = "Log out";
 
 "tabbar.support" = "Support";
 "FAQ" = "FAQ";
@@ -148,6 +149,7 @@
 "Forgot password?" = "Forgot password?";
 "Error" = "Error";
 "Invalid email" = "Invalid email";
+"Invalid password" = "Invalid password";
 "OK" = "OK";
 "RememberData" = "Remember data for automatic authorization?";
 

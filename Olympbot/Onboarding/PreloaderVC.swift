@@ -25,9 +25,15 @@ class VCLoad: UIViewController {
 extension VCLoad {
     @objc private func followVC() {
         if UserData.showedOnboarding {
-            let vc = TabBarController()
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true)
+            if UserData.showedAuth {
+                let vc = TabBarController()
+                vc.modalPresentationStyle = .fullScreen
+                present(vc, animated: false)
+            } else {
+                let vc = StartLoginVC()
+                vc.modalPresentationStyle = .fullScreen
+                present(vc, animated: false)
+            }
         } else {
             UserDefaults.standard.set(true, forKey: UserData.SettingsKeys.showedOnboarding.rawValue)
             let vc = Onboarding1()

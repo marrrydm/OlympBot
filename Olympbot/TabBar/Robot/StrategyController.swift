@@ -2817,7 +2817,7 @@ extension StrategyController {
         summaryNextBtn.snp.makeConstraints { make in
             make.bottom.equalToSuperview().offset(-20)
             make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(50)
+            make.height.equalTo(45)
         }
 
         bgViewSummary.snp.makeConstraints { make in

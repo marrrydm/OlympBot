@@ -67,8 +67,8 @@
 "Moving Averages" = "Moving Averages";
 "bg2.content" = "MA5, MA10, MA20, MA50, MA100, MA200 Simple and Exponential";
 "MACD" = "MACD";
-"mac.content" = "Trend tracing with moving average";
-"mac.content2" = "It measures the relationship between 2 EMA. It can confirm when it's the right Time to ouv or sell. Pertorms well with low volatilitv assets like stocks goods and materials.";
+"mac.content" = "Trend trading with moving average";
+"mac.content2" = "It measures the relationship between 2 EMA. It can confirm when it's the right Time to out or sell. Performs well with low volatility assets like stocks goods and materials.";
 "Stochastic" = "Stochastic";
 "Stochastic.content" = "Oscillator";
 "Stochastic.content2" = "It's based on the idea that closing prices should confirm the trend. It shows if the asset is overbought or oversold. It can perform well on different time frames.";
@@ -76,7 +76,7 @@
 "Bollinger.content" = "Oscillator";
 "Bollinger.content2" = "Bollinger Bands is a technical indicator that is composed of a set of lines plotted two standard deviations away from a simple moving average. It is used to indicate potential overbought and oversold conditions.";
 "RSI" = "RSI";
-"RSI.content2" = "Measures price change in relation to recent price highs and lows. It can confirm if the asset is overbought or oversold. Performs better on longer time frames.";
+"RSI.content2" = "Measures price change in relation to recent price highs and lows. It can confirm if the asset is overbought or oversold. Performs better or longer time frames.";
 "CCI" = "CCI";
 "CCI.content2" = "The CCI compares the current price to an average price over a period of time. The indicator fluctuates above or below zero, moving into positive or negative territory.";
 "Close price" = "Close price";
@@ -87,17 +87,17 @@
 "Strategy" = "Strategy";
 
 "sum1" = "With a basic AI strategy, up to 73% of successful trades are achieved.";
-"mac1" = "Trend tracing with moving average";
+"mac1" = "Trend trading with moving average";
 "stochastic1" = "Difference of highs and lows with the current position";
 "bollinger1" = "Calculates based on the standard deviation of a moving average";
 "RSI1" = "Speed and price movement indicator";
 "CCI1" = "Measures the deviation of the price from the average";
-"ClosePrice1" = "Candlestick trend tracing indicator";
+"ClosePrice1" = "Candlestick trend trading indicator";
 "Show details" = "Show details";
 "Edit" = "Edit";
 "Reset" = "Reset";
 "Save" = "Save";
-"MACD settings" = "MACD settings";
+"MACD settings" = "MACD setting";
 "Histogram" = "Histogram";
 "Signal" = "Signal";
 "MACD line" = "MACD line";
@@ -106,7 +106,7 @@
 "Stochastic settings" = "Stochastic settings";
 "K" = "%K";
 "Bollinger Bands settings" = "Bollinger Bands settings";
-"Strandard deviation" = "Strandard deviation";
+"Standard deviation" = "Standard deviation";
 "SMA" = "SMA";
 "RSI settings" = "RSI settings";
 "CCI settings" = "CCI settings";
@@ -127,6 +127,7 @@
 "Confirm" = "Confirm";
 "Cancel" = "Cancel";
 "doneBot" = "Are you sure you want to stop the robot?";
+"AI Base trading strategy" = "AI Base trading strategy";
 
 "trade.start.1" = "Practice on a risk-free account before you start trading";
 "trade.start.2" = "Get ready to enhance your trading skills with our risk-free account simulator";

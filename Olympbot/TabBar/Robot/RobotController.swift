@@ -504,7 +504,7 @@ class RobotController: UIViewController, UIScrollViewDelegate {
     private let riskLblConfirm: UILabel = {
         let labelTitle = UILabel()
         labelTitle.textColor = .white
-        labelTitle.text = "Risk management".localize()
+        labelTitle.text = "Risk Management".localize()
         labelTitle.font = .systemFont(ofSize: 13, weight: .medium)
         labelTitle.textAlignment = .left
 
@@ -534,7 +534,7 @@ class RobotController: UIViewController, UIScrollViewDelegate {
     private let indicatorsLblConfirmVal: UILabel = {
         let labelTitle = UILabel()
         labelTitle.textColor = .white
-        labelTitle.text = "AI Base trading strategy"
+        labelTitle.text = "AI Base trading strategy".localize()
         labelTitle.font = .systemFont(ofSize: 13, weight: .medium)
         labelTitle.textAlignment = .right
 
@@ -544,7 +544,7 @@ class RobotController: UIViewController, UIScrollViewDelegate {
     private let riskLblConfirmVal: UILabel = {
         let labelTitle = UILabel()
         labelTitle.textColor = .white
-        labelTitle.text = "Optimal"
+        labelTitle.text = "Optimal".localize()
         labelTitle.font = .systemFont(ofSize: 13, weight: .medium)
         labelTitle.textAlignment = .right
 
@@ -875,7 +875,7 @@ class RobotController: UIViewController, UIScrollViewDelegate {
             make.top.equalTo(strategyLabel.snp.bottom).offset(12)
             make.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
             make.leading.equalTo(view.snp.centerX).offset(5.5)
-            make.bottom.equalTo(customLabel2.snp.bottom).offset(12)
+            make.bottom.equalTo(customLabel2.snp.bottom).offset(18)
         }
 
         check1Img.snp.makeConstraints { make in
@@ -899,7 +899,7 @@ class RobotController: UIViewController, UIScrollViewDelegate {
             make.top.equalTo(strategyLabel.snp.bottom).offset(12)
             make.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
             make.leading.equalTo(view.snp.centerX).offset(5.5)
-            make.bottom.equalTo(customLabel2.snp.bottom).offset(12)
+            make.bottom.equalTo(customLabel2.snp.bottom).offset(18)
         }
 
         check5Img.snp.makeConstraints { make in
@@ -1185,19 +1185,19 @@ class RobotController: UIViewController, UIScrollViewDelegate {
 
         viewForItems.snp.makeConstraints { make in
             make.bottom.equalTo(confirmButton.snp.top).offset(-16)
-            make.leading.trailing.equalToSuperview().inset(16)
+            make.leading.trailing.equalToSuperview().inset(10)
             make.top.equalTo(strategyLblConfirm.snp.top).offset(-13)
         }
 
         profitLblConfirm.snp.makeConstraints { make in
             make.bottom.equalToSuperview().offset(-13)
-            make.leading.equalToSuperview().offset(16)
+            make.leading.equalToSuperview().offset(12)
             make.trailing.equalTo(viewConfirm.snp.centerX)
         }
 
         profitLblConfirmVal.snp.makeConstraints { make in
             make.bottom.equalToSuperview().offset(-13)
-            make.trailing.equalToSuperview().inset(16)
+            make.trailing.equalToSuperview().inset(12)
             make.leading.equalTo(viewConfirm.snp.centerX)
         }
 
@@ -1209,13 +1209,13 @@ class RobotController: UIViewController, UIScrollViewDelegate {
 
         riskLblConfirm.snp.makeConstraints { make in
             make.bottom.equalTo(line3.snp.top).offset(-13)
-            make.leading.equalToSuperview().offset(16)
+            make.leading.equalToSuperview().offset(12)
             make.trailing.equalTo(viewConfirm.snp.centerX)
         }
 
         riskLblConfirmVal.snp.makeConstraints { make in
             make.bottom.equalTo(line3.snp.top).offset(-13)
-            make.trailing.equalToSuperview().inset(16)
+            make.trailing.equalToSuperview().inset(12)
             make.leading.equalTo(viewConfirm.snp.centerX)
         }
 
@@ -1227,14 +1227,16 @@ class RobotController: UIViewController, UIScrollViewDelegate {
 
         indicatorsLblConfirm.snp.makeConstraints { make in
             make.bottom.equalTo(line2.snp.top).offset(-13)
-            make.leading.equalToSuperview().offset(16)
-            make.trailing.equalTo(viewConfirm.snp.centerX)
+            make.leading.equalToSuperview().offset(12)
+//            make.trailing.equalTo(viewConfirm.snp.centerX)
+            make.trailing.equalTo(indicatorsLblConfirmVal.snp.leading).offset(-5)
         }
 
         indicatorsLblConfirmVal.snp.makeConstraints { make in
             make.bottom.equalTo(line2.snp.top).offset(-13)
-            make.trailing.equalToSuperview().inset(16)
-            make.leading.equalTo(viewConfirm.snp.centerX)
+            make.trailing.equalToSuperview().inset(12)
+            make.leading.equalTo(indicatorsLblConfirm.snp.trailing).offset(5)
+//            make.leading.equalTo(viewConfirm.snp.centerX).offset(-80)
         }
 
         line1.snp.makeConstraints { make in
@@ -1245,13 +1247,13 @@ class RobotController: UIViewController, UIScrollViewDelegate {
 
         strategyLblConfirm.snp.makeConstraints { make in
             make.bottom.equalTo(line1.snp.top).offset(-13)
-            make.leading.equalToSuperview().offset(16)
+            make.leading.equalToSuperview().offset(12)
             make.trailing.equalTo(viewConfirm.snp.centerX)
         }
 
         strategyLblConfirmVal.snp.makeConstraints { make in
             make.bottom.equalTo(line1.snp.top).offset(-13)
-            make.trailing.equalToSuperview().inset(16)
+            make.trailing.equalToSuperview().inset(12)
             make.leading.equalTo(viewConfirm.snp.centerX)
         }
 
@@ -1309,7 +1311,6 @@ extension RobotController {
         viewDark.isHidden = false
         viewAccount.isHidden = true
         activityIndicator.startAnimating()
-
 
         switch sender.view!.tag {
         case 1:

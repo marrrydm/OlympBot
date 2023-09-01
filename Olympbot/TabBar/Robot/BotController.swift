@@ -50,7 +50,7 @@ class BotController: UIViewController, UIScrollViewDelegate {
     private let profitLabel: UILabel = {
         let view = UILabel()
         view.textColor = UIColor(red: 0.58, green: 0.61, blue: 0.66, alpha: 1)
-        view.text = "Profit:"
+        view.text = "Profit:".localize()
         view.font = .systemFont(ofSize: 13, weight: .medium)
 
         return view
@@ -146,7 +146,7 @@ class BotController: UIViewController, UIScrollViewDelegate {
     private let strategyLabelVal: UILabel = {
         let view = UILabel()
         view.textColor = .white
-        view.text = "Auto"
+        view.text = "Auto".localize()
         view.font = .systemFont(ofSize: 13, weight: .bold)
         view.textAlignment = .right
 
@@ -168,9 +168,11 @@ class BotController: UIViewController, UIScrollViewDelegate {
     private let indicatorsLabelVal: UILabel = {
         let view = UILabel()
         view.textColor = .white
-        view.text = "AI Base trading strategy"
+        view.text = "AI Base trading strategy".localize()
         view.font = .systemFont(ofSize: 13, weight: .bold)
         view.textAlignment = .right
+        view.numberOfLines = 0
+        view.lineBreakMode = .byWordWrapping
 
         return view
     }()
@@ -180,7 +182,7 @@ class BotController: UIViewController, UIScrollViewDelegate {
     private let riskLabel: UILabel = {
         let view = UILabel()
         view.textColor = UIColor(red: 0.58, green: 0.61, blue: 0.66, alpha: 1)
-        view.text = "Risk management".localize()
+        view.text = "Risk Management".localize()
         view.font = .systemFont(ofSize: 13, weight: .medium)
         view.textAlignment = .left
 
@@ -190,7 +192,7 @@ class BotController: UIViewController, UIScrollViewDelegate {
     private let riskLabelVal: UILabel = {
         let view = UILabel()
         view.textColor = .white
-        view.text = "Optimal"
+        view.text = "Optimal".localize()
         view.font = .systemFont(ofSize: 13, weight: .bold)
         view.textAlignment = .right
 
@@ -547,11 +549,13 @@ class BotController: UIViewController, UIScrollViewDelegate {
         indicatorsLabel.snp.makeConstraints { make in
             make.centerY.equalTo(indicatorsImg.snp.centerY)
             make.leading.equalTo(indicatorsImg.snp.trailing).offset(7)
+            make.trailing.equalTo(indicatorsLabelVal.snp.leading).offset(-5)
         }
 
         indicatorsLabelVal.snp.makeConstraints { make in
             make.centerY.equalTo(indicatorsImg.snp.centerY)
             make.trailing.equalToSuperview().offset(-16)
+            make.leading.equalTo(indicatorsLabel.snp.trailing).offset(5)
         }
 
         riskImg.snp.makeConstraints { make in
@@ -633,9 +637,9 @@ class BotController: UIViewController, UIScrollViewDelegate {
             make.centerX.centerY.equalToSuperview()
         }
 
-        strategyLabelVal.text = UserData.strategy
-        riskLabelVal.text = UserData.risk
-        profitLabelsVal.text = UserData.profit
+        strategyLabelVal.text = UserData.strategy.localize()
+        riskLabelVal.text = UserData.risk.localize()
+        profitLabelsVal.text = UserData.profit.localize()
         pairLabel.text = UserData.pairVal
 
         if UserData.profitAfterActive == 0 {

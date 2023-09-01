@@ -208,31 +208,31 @@ class LoginVC: UIViewController {
 
         control.snp.makeConstraints { make in
             make.top.equalTo(labelTitle1.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview().inset(16)
+            make.leading.trailing.equalToSuperview().inset(12)
             make.height.equalTo(32)
         }
 
         emailTextField.snp.makeConstraints { make in
             make.top.equalTo(control.snp.bottom).offset(28)
-            make.leading.trailing.equalToSuperview().inset(16)
+            make.leading.trailing.equalToSuperview().inset(12)
             make.height.equalTo(50)
         }
 
         passwordTextField.snp.makeConstraints { make in
             make.top.equalTo(emailTextField.snp.bottom).offset(16)
-            make.leading.trailing.equalToSuperview().inset(16)
+            make.leading.trailing.equalToSuperview().inset(12)
             make.height.equalTo(50)
         }
 
         btnMark.snp.makeConstraints { make in
             make.top.equalTo(passwordTextField.snp.bottom).offset(22)
-            make.leading.equalToSuperview().offset(16)
-            make.height.width.equalTo(24)
+            make.leading.equalToSuperview().offset(12)
+            make.height.width.equalTo(20)
         }
 
         lblConfirm.snp.makeConstraints { make in
             make.bottom.equalTo(btnMark.snp.centerY).offset(-1)
-            make.leading.equalTo(btnMark.snp.trailing).offset(10)
+            make.leading.equalTo(btnMark.snp.trailing).offset(8)
         }
 
         lblTerms.snp.makeConstraints { make in
@@ -241,14 +241,16 @@ class LoginVC: UIViewController {
         }
 
         lblTemp.snp.makeConstraints { make in
-            make.bottom.equalTo(btnMark.snp.centerY).offset(-1)
-            make.leading.equalTo(lblTerms.snp.trailing).offset(3)
-            make.trailing.equalToSuperview().inset(16)
+//            make.bottom.equalTo(btnMark.snp.centerY).offset(-1)
+            make.top.equalTo(btnMark.snp.centerY).offset(1)
+            make.leading.equalTo(btnMark.snp.trailing).offset(8)
+//            make.leading.equalTo(lblTerms.snp.trailing).offset(2)
+//            make.trailing.equalToSuperview().inset(16)
         }
 
         lblPolicy.snp.makeConstraints { make in
             make.top.equalTo(btnMark.snp.centerY).offset(1)
-            make.leading.equalTo(btnMark.snp.trailing).offset(10)
+            make.leading.equalTo(lblTemp.snp.trailing).offset(3)
             make.trailing.equalToSuperview().inset(16)
         }
 
@@ -373,7 +375,7 @@ extension LoginVC {
     @objc func segmentControl(_ segmentedControl: UISegmentedControl) {
         switch (segmentedControl.selectedSegmentIndex) {
         case 0:
-            btn1.setTitle("Open an account", for: .normal)
+            btn1.setTitle("Open an account".localize(), for: .normal)
             control.backgroundColor = UIColor(red: 0.43, green: 0.43, blue: 0.44, alpha: 0.3)
             btnMark.isHidden = false
             lblConfirm.isHidden = false
@@ -382,7 +384,7 @@ extension LoginVC {
             lblPolicy.isHidden = false
             lblTemp.isHidden = false
         case 1:
-            btn1.setTitle("Log in", for: .normal)
+            btn1.setTitle("Log in".localize(), for: .normal)
             control.backgroundColor = UIColor(red: 0.43, green: 0.43, blue: 0.44, alpha: 0.3)
             btnMark.isHidden = true
             lblConfirm.isHidden = true

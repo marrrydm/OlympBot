@@ -124,7 +124,7 @@ class ResultVC: UIViewController {
 
         viewResult.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
+            make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(12)
             make.bottom.equalTo(lblTotalProfitVal.snp.bottom).offset(26)
             make.top.equalTo(lblNumVal.snp.top).offset(-26)
         }
@@ -138,32 +138,32 @@ class ResultVC: UIViewController {
 
         lblTotalProfit.snp.makeConstraints { make in
             make.bottom.equalToSuperview().offset(-26)
-            make.leading.equalToSuperview().inset(16)
+            make.leading.equalToSuperview().inset(14)
         }
 
         lblTotalProfitVal.snp.makeConstraints { make in
             make.bottom.equalToSuperview().offset(-26)
-            make.trailing.equalToSuperview().inset(16)
+            make.trailing.equalToSuperview().inset(14)
         }
 
         lblPercentage.snp.makeConstraints { make in
             make.bottom.equalTo(lblTotalProfitVal.snp.top).offset(-14)
-            make.leading.equalToSuperview().inset(16)
+            make.leading.equalToSuperview().inset(14)
         }
 
         lblPercentageVal.snp.makeConstraints { make in
             make.bottom.equalTo(lblTotalProfitVal.snp.top).offset(-14)
-            make.trailing.equalToSuperview().inset(16)
+            make.trailing.equalToSuperview().inset(14)
         }
 
         lblNum.snp.makeConstraints { make in
             make.bottom.equalTo(lblPercentageVal.snp.top).offset(-14)
-            make.leading.equalToSuperview().inset(16)
+            make.leading.equalToSuperview().inset(14)
         }
 
         lblNumVal.snp.makeConstraints { make in
-            make.bottom.equalTo(lblPercentageVal.snp.top).offset(-14)
-            make.trailing.equalToSuperview().inset(16)
+            make.centerY.equalTo(lblNum.snp.centerY)
+            make.trailing.equalToSuperview().inset(14)
         }
     }
 }

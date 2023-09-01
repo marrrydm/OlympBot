@@ -142,7 +142,7 @@ class ResultVC: UIViewController {
         }
 
         lblTotalProfitVal.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-26)
+            make.centerY.equalTo(lblTotalProfit.snp.centerY)
             make.trailing.equalToSuperview().inset(14)
         }
 
@@ -162,7 +162,7 @@ class ResultVC: UIViewController {
         }
 
         lblNumVal.snp.makeConstraints { make in
-            make.centerY.equalTo(lblNum.snp.centerY)
+            make.bottom.equalTo(lblPercentageVal.snp.top).offset(-14)
             make.trailing.equalToSuperview().inset(14)
         }
     }

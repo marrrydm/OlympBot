@@ -924,7 +924,7 @@ class RobotController: UIViewController, UIScrollViewDelegate {
         }
 
         autoLabel1.snp.makeConstraints { make in
-            make.top.equalTo(autoView.snp.centerY)
+            make.top.equalTo(autoView.snp.centerY).offset(-10)
             make.leading.equalToSuperview().inset(12)
             make.trailing.equalToSuperview().inset(18)
         }
@@ -936,7 +936,7 @@ class RobotController: UIViewController, UIScrollViewDelegate {
         }
 
         customLabel1.snp.makeConstraints { make in
-            make.top.equalTo(customView.snp.centerY)
+            make.top.equalTo(customView.snp.centerY).offset(-10)
             make.leading.equalToSuperview().inset(12)
             make.trailing.equalToSuperview().inset(18)
         }
@@ -948,7 +948,7 @@ class RobotController: UIViewController, UIScrollViewDelegate {
         }
 
         autoLabel12.snp.makeConstraints { make in
-            make.top.equalTo(autoView.snp.centerY)
+            make.top.equalTo(autoView.snp.centerY).offset(-10)
             make.leading.equalToSuperview().inset(12)
             make.trailing.equalToSuperview().inset(18)
         }
@@ -960,7 +960,7 @@ class RobotController: UIViewController, UIScrollViewDelegate {
         }
 
         customLabel12.snp.makeConstraints { make in
-            make.top.equalTo(customView.snp.centerY)
+            make.top.equalTo(customView.snp.centerY).offset(-10)
             make.leading.equalToSuperview().inset(12)
             make.trailing.equalToSuperview().inset(18)
         }
@@ -982,7 +982,7 @@ class RobotController: UIViewController, UIScrollViewDelegate {
             make.top.equalTo(riskLabel.snp.bottom).offset(12)
             make.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
             make.leading.equalTo(view.snp.centerX).offset(5.5)
-            make.bottom.equalTo(aggressiveLabel2.snp.bottom).offset(12)
+            make.bottom.equalTo(optimalLabel2.snp.bottom).offset(12)
         }
 
         check3Img.snp.makeConstraints { make in
@@ -1028,7 +1028,7 @@ class RobotController: UIViewController, UIScrollViewDelegate {
             make.top.equalTo(riskLabel.snp.bottom).offset(12)
             make.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
             make.leading.equalTo(view.snp.centerX).offset(5.5)
-            make.bottom.equalTo(aggressiveLabel2.snp.bottom).offset(12)
+            make.bottom.equalTo(optimalLabel2.snp.bottom).offset(12)
         }
 
         check7Img.snp.makeConstraints { make in

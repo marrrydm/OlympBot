@@ -113,6 +113,12 @@
 		F86FDA662A9CB4B40026092B /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		F86FDA682A9D06BD0026092B /* SignalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalController.swift; sourceTree = "<group>"; };
 		F86FDA6A2A9D09B20026092B /* ResultSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSignal.swift; sourceTree = "<group>"; };
+		F899F5F42AA32B8600B193EB /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F899F5F52AA32B8800B193EB /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F899F5F62AA32BB500B193EB /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F899F5F72AA32BB500B193EB /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F899F5F82AA32BCB00B193EB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F899F5F92AA32BCB00B193EB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F8A1CA812A581B870074C9BD /* OptimalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptimalController.swift; sourceTree = "<group>"; };
 		F8A1CA832A581B940074C9BD /* AggressiveController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AggressiveController.swift; sourceTree = "<group>"; };
 		F8A1CA942A600B780074C9BD /* StrategyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyController.swift; sourceTree = "<group>"; };
@@ -443,6 +449,9 @@
 				th,
 				id,
 				"pt-BR",
+				vi,
+				ms,
+				ru,
 			);
 			mainGroup = F8C6A1622A4D693D007AE0CC;
 			packageReferences = (
@@ -602,6 +611,9 @@
 				F851A8C12AA1C37200583D71 /* th */,
 				F851A8C32AA1C38000583D71 /* id */,
 				F851A8C52AA1D27500583D71 /* pt-BR */,
+				F899F5F42AA32B8600B193EB /* vi */,
+				F899F5F62AA32BB500B193EB /* ms */,
+				F899F5F82AA32BCB00B193EB /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -617,6 +629,9 @@
 				F851A8C22AA1C37200583D71 /* th */,
 				F851A8C42AA1C38000583D71 /* id */,
 				F851A8C62AA1D27500583D71 /* pt-BR */,
+				F899F5F52AA32B8800B193EB /* vi */,
+				F899F5F72AA32BB500B193EB /* ms */,
+				F899F5F92AA32BCB00B193EB /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
